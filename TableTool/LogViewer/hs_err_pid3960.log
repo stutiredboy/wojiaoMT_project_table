@@ -1,0 +1,181 @@
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x040081e0, pid=3960, tid=3588
+#
+# Java VM: Java HotSpot(TM) Client VM (1.6.0-b105 mixed mode, sharing)
+# Problematic frame:
+# C  0x040081e0
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x003f6800):  JavaThread "main" [_thread_in_native, id=3588]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x040081e0
+
+Registers:
+EAX=0x7ffde000, EBX=0x00000000, ECX=0x03e60fe7, EDX=0x00001812
+ESP=0x0091fa2c, EBP=0x0091fa54, ESI=0x03e60fe2, EDI=0x0091fa90
+EIP=0x040081e0, EFLAGS=0x00010202
+
+Top of Stack: (sp=0x0091fa2c)
+0x0091fa2c:   77d18734 00041602 0000c096 00000000
+0x0091fa3c:   00000000 03e60fe2 dcbaabcd 00000000
+0x0091fa4c:   0091fa90 03e60fe2 0091fabc 77d18816
+0x0091fa5c:   03e60fe2 00041602 0000c096 00000000
+0x0091fa6c:   00000000 00000000 00041602 00000102
+0x0091fa7c:   00000014 00000001 00000000 00000000
+0x0091fa8c:   00000010 00000000 0091fab0 00000001
+0x0091fa9c:   00000000 00000000 0091fa70 0091f650 
+
+Instructions: (pc=0x040081e0)
+0x040081d0:   
+[error occurred during error reporting, step 100, id 0xc0000005]
+
+Stack: [0x008d0000,0x00920000),  sp=0x0091fa2c,  free space=318k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  0x040081e0
+C  [USER32.dll+0x8816]
+C  [USER32.dll+0x18ea0]
+C  [USER32.dll+0x18eec]
+C  [ntdll.dll+0xe473]
+C  [USER32.dll+0x9402]
+C  [swt-win32-3428.dll+0xb4b3]
+j  org.eclipse.swt.internal.win32.OS.PeekMessageW(Lorg/eclipse/swt/internal/win32/MSG;IIII)Z+0
+j  org.eclipse.swt.internal.win32.OS.PeekMessage(Lorg/eclipse/swt/internal/win32/MSG;IIII)Z+12
+j  org.eclipse.swt.widgets.Display.readAndDispatch()Z+25
+j  com.mammoth.logger.gui.LogShell.main([Ljava/lang/String;)V+56
+v  ~StubRoutines::call_stub
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.eclipse.swt.internal.win32.OS.PeekMessageW(Lorg/eclipse/swt/internal/win32/MSG;IIII)Z+0
+j  org.eclipse.swt.internal.win32.OS.PeekMessage(Lorg/eclipse/swt/internal/win32/MSG;IIII)Z+12
+j  org.eclipse.swt.widgets.Display.readAndDispatch()Z+25
+j  com.mammoth.logger.gui.LogShell.main([Ljava/lang/String;)V+56
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x02bb6800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=3248]
+  0x02bb5400 JavaThread "CompilerThread0" daemon [_thread_blocked, id=2488]
+  0x02bb1000 JavaThread "Attach Listener" daemon [_thread_blocked, id=2116]
+  0x02bbb800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=3752]
+  0x02b71c00 JavaThread "Finalizer" daemon [_thread_blocked, id=3576]
+  0x02b6d800 JavaThread "Reference Handler" daemon [_thread_blocked, id=3252]
+=>0x003f6800 JavaThread "main" [_thread_in_native, id=3588]
+
+Other Threads:
+  0x02b64400 VMThread [id=3464]
+  0x02bc4400 WatcherThread [id=2748]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 960K, used 279K [0x169d0000, 0x16ad0000, 0x17d80000)
+  eden space 896K,  24% used [0x169d0000, 0x16a05fb0, 0x16ab0000)
+  from space 64K,  99% used [0x16ac0000, 0x16acfff8, 0x16ad0000)
+  to   space 64K,   0% used [0x16ab0000, 0x16ab0000, 0x16ac0000)
+ tenured generation   total 4096K, used 1186K [0x17d80000, 0x18180000, 0x269d0000)
+   the space 4096K,  28% used [0x17d80000, 0x17ea89f0, 0x17ea8a00, 0x18180000)
+ compacting perm gen  total 12288K, used 2297K [0x269d0000, 0x275d0000, 0x2a9d0000)
+   the space 12288K,  18% used [0x269d0000, 0x26c0e548, 0x26c0e600, 0x275d0000)
+    ro space 8192K,  66% used [0x2a9d0000, 0x2af19920, 0x2af19a00, 0x2b1d0000)
+    rw space 12288K,  52% used [0x2b1d0000, 0x2b816130, 0x2b816200, 0x2bdd0000)
+
+Dynamic libraries:
+0x00400000 - 0x00423000 	C:\Program Files\Java\jdk1.6.0\bin\javaw.exe
+0x7c920000 - 0x7c9b6000 	C:\WINDOWS\system32\ntdll.dll
+0x7c800000 - 0x7c91e000 	C:\WINDOWS\system32\kernel32.dll
+0x77da0000 - 0x77e49000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77e50000 - 0x77ee2000 	C:\WINDOWS\system32\RPCRT4.dll
+0x77fc0000 - 0x77fd1000 	C:\WINDOWS\system32\Secur32.dll
+0x77d10000 - 0x77da0000 	C:\WINDOWS\system32\USER32.dll
+0x77ef0000 - 0x77f39000 	C:\WINDOWS\system32\GDI32.dll
+0x76300000 - 0x7631d000 	C:\WINDOWS\system32\IMM32.DLL
+0x62c20000 - 0x62c29000 	C:\WINDOWS\system32\LPK.DLL
+0x73fa0000 - 0x7400b000 	C:\WINDOWS\system32\USP10.dll
+0x7c340000 - 0x7c396000 	C:\Program Files\Java\jdk1.6.0\jre\bin\msvcr71.dll
+0x6d7c0000 - 0x6da07000 	C:\Program Files\Java\jdk1.6.0\jre\bin\client\jvm.dll
+0x76b10000 - 0x76b3a000 	C:\WINDOWS\system32\WINMM.dll
+0x6d310000 - 0x6d318000 	C:\Program Files\Java\jdk1.6.0\jre\bin\hpi.dll
+0x76bc0000 - 0x76bcb000 	C:\WINDOWS\system32\PSAPI.DLL
+0x6d770000 - 0x6d77c000 	C:\Program Files\Java\jdk1.6.0\jre\bin\verify.dll
+0x6d3b0000 - 0x6d3cf000 	C:\Program Files\Java\jdk1.6.0\jre\bin\java.dll
+0x6d7b0000 - 0x6d7bf000 	C:\Program Files\Java\jdk1.6.0\jre\bin\zip.dll
+0x10000000 - 0x10053000 	C:\Documents and Settings\Administrator\Local Settings\Temp\swt-win32-3428.dll
+0x76990000 - 0x76ad4000 	C:\WINDOWS\system32\ole32.dll
+0x77be0000 - 0x77c38000 	C:\WINDOWS\system32\msvcrt.dll
+0x770f0000 - 0x7717b000 	C:\WINDOWS\system32\OLEAUT32.dll
+0x76320000 - 0x76367000 	C:\WINDOWS\system32\comdlg32.dll
+0x77180000 - 0x77283000 	C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.5512_x-ww_35d4ce83\COMCTL32.dll
+0x77f40000 - 0x77fb6000 	C:\WINDOWS\system32\SHLWAPI.dll
+0x7d590000 - 0x7dd54000 	C:\WINDOWS\system32\SHELL32.dll
+0x76680000 - 0x7672c000 	C:\WINDOWS\system32\WININET.dll
+0x765e0000 - 0x76673000 	C:\WINDOWS\system32\CRYPT32.dll
+0x76db0000 - 0x76dc2000 	C:\WINDOWS\system32\MSASN1.dll
+0x5d170000 - 0x5d20d000 	C:\WINDOWS\system32\comctl32.dll
+0x5adc0000 - 0x5adf7000 	C:\WINDOWS\system32\uxtheme.dll
+0x032d0000 - 0x03312000 	C:\Program Files\360safe\safemon\safemon.dll
+0x762f0000 - 0x762f5000 	C:\WINDOWS\system32\MSIMG32.dll
+0x77bd0000 - 0x77bd8000 	C:\WINDOWS\system32\VERSION.dll
+0x71a20000 - 0x71a37000 	C:\WINDOWS\system32\WS2_32.dll
+0x71a10000 - 0x71a18000 	C:\WINDOWS\system32\WS2HELP.dll
+0x7eae0000 - 0x7eb84000 	C:\WINDOWS\system32\urlmon.dll
+0x74680000 - 0x746cc000 	C:\WINDOWS\system32\MSCTF.dll
+0x73640000 - 0x7366e000 	C:\WINDOWS\system32\msctfime.ime
+0x033d0000 - 0x033e4000 	C:\Documents and Settings\Administrator\Local Settings\Temp\swt-gdip-win32-3428.dll
+0x4ae90000 - 0x4b03b000 	C:\WINDOWS\WinSxS\x86_Microsoft.Windows.GdiPlus_6595b64144ccf1df_1.0.6001.22319_x-ww_f0b4c2df\gdiplus.dll
+0x03b20000 - 0x03b75000 	C:\Program Files\Tencent\RTXC\RTXOLAss.dll
+0x72f70000 - 0x72f96000 	C:\WINDOWS\system32\WINSPOOL.DRV
+0x5efe0000 - 0x5eff7000 	C:\WINDOWS\system32\OLEPRO32.DLL
+0x76d70000 - 0x76d92000 	C:\WINDOWS\system32\appHelp.dll
+0x76fa0000 - 0x7701f000 	C:\WINDOWS\system32\CLBCATQ.DLL
+0x77020000 - 0x770c3000 	C:\WINDOWS\system32\COMRes.dll
+0x03ce0000 - 0x03d50000 	C:\WINDOWS\System32\cscui.dll
+0x76570000 - 0x7658c000 	C:\WINDOWS\System32\CSCDLL.dll
+0x75ef0000 - 0x75feb000 	C:\WINDOWS\system32\browseui.dll
+0x759d0000 - 0x75a7f000 	C:\WINDOWS\system32\USERENV.dll
+0x76060000 - 0x7616c000 	C:\WINDOWS\system32\SETUPAPI.dll
+0x76960000 - 0x7697e000 	C:\WINDOWS\system32\ntshrui.dll
+0x76af0000 - 0x76b01000 	C:\WINDOWS\system32\ATL.DLL
+0x5fdd0000 - 0x5fe25000 	C:\WINDOWS\system32\NETAPI32.dll
+0x7e550000 - 0x7e6d0000 	C:\WINDOWS\system32\shdocvw.dll
+0x75430000 - 0x754a1000 	C:\WINDOWS\system32\CRYPTUI.dll
+0x76c00000 - 0x76c2e000 	C:\WINDOWS\system32\WINTRUST.dll
+0x76c60000 - 0x76c88000 	C:\WINDOWS\system32\IMAGEHLP.dll
+0x76f30000 - 0x76f5c000 	C:\WINDOWS\system32\WLDAP32.dll
+0x6d570000 - 0x6d583000 	C:\Program Files\Java\jdk1.6.0\jre\bin\net.dll
+0x6d590000 - 0x6d599000 	C:\Program Files\Java\jdk1.6.0\jre\bin\nio.dll
+
+VM Arguments:
+jvm_args: -Xmx256M
+java_command: LogViewer.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.6.0;
+CLASSPATH=.;.;C:\PROGRA~1\JMF21~1.1E\lib\sound.jar;C:\PROGRA~1\JMF21~1.1E\lib\jmf.jar;C:\PROGRA~1\JMF21~1.1E\lib;C:\WINDOWS\java\classes;.
+PATH=C:\Program Files\Java\jdk1.6.0\bin;E:\oracle\ora90\bin;C:\Program Files\Oracle\jre\1.1.8\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\Microsoft SQL Server\90\Tools\binn\;C:\Program Files\Subversion\bin;c:\a;C:\Program Files\Microsoft Visual Studio\Common\Tools\WinNT;C:\Program Files\Microsoft Visual Studio\Common\MSDev98\Bin;C:\Program Files\Microsoft Visual Studio\Common\Tools;C:\Program Files\Microsoft Visual Studio\VC98\bin;C:\Program Files\CVSNT\;C:\Program Files\SSH Communications Security\SSH Secure Shell;C:\Program Files\StormII\Codec;C:\Program Files\StormII
+USERNAME=Administrator
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 15 Stepping 13, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows XP Build 2600 Service Pack 3
+
+CPU:total 2 family 6, cmov, cx8, fxsr, mmx, sse, sse2
+
+Memory: 4k page, physical 2096492k(1166880k free), swap 4037520k(3009072k free)
+
+vm_info: Java HotSpot(TM) Client VM (1.6.0-b105) for windows-x86, built on Nov 29 2006 00:48:48 by "java_re" with unknown MS VC++:1310
+

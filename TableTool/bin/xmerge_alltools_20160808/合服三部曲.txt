@@ -1,0 +1,32 @@
+合服工具包括3部分
+1.xmerge  合并需要合服的2个数据库工具
+2.xclear  清除等级及其他不符合要求的玩家,注意，这里有区分应用宝服务器与普通服务器
+3.transform_mkdb 合并和清除完成后需要用改工具进行数据库升级，主要是为了删除清除数据后留下的废弃日志
+
+具体工具使用：
+一.xmerge工具
+注意：针对不同阶段服务器版本合服，如果有数据库结构改变都需要重新编写生成合服工具，需要依赖的jar包是游戏服务器gs.jar
+
+合服具体步骤：
+1.合服执行命令windows下执行run.bat文件，内容如下，需要修改对应的路径
+java -jar xmerge_run.jar -conf xmerge.xml -srcdb "F:\\xmergetest\\src_db" -destdb "F:\\xmergetest\\dest_db" -resultdb "F:\\xmergetest\\result_db" 
+主要包括原数据库、目的数据库、合服后的结果数据库，以及合服配置文件xmerge.xml
+src_db目录是服务器1数据库
+dest_db目录是服务器2数据库
+result_db 目录是合服结果数据库
+2.linux下执行linuxrun.sh
+
+
+二.xclear工具
+把第一步合并完成的数据库result_db目录下的 dbdata文件夹、dblogs文件夹以及metadata.xml文件复制到xlear工具下的mkdb目录下
+然后在linux执行runlinux.sh
+
+三.transform_mkdb工具
+把第二步处理完成的数据库，在mkdb目录下包括 dbdata文件夹、dblogs文件夹以及metadata.xml文件复制到transform_mkdb工具的transform_mkdb\bin\src_db目录下
+在linux下执行linux_run.sh 
+最后会在destdb文件夹下生成最终的数据库文件，包括dbdata文件夹、dblogs文件夹，注意没有metadata.xml文件  可以在把这份数据库放到gs游戏目录的mkdb下启动执行
+注意，需要清除游戏mkdb下的所有内容在复制
+
+
+
+

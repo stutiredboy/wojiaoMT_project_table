@@ -1,0 +1,11 @@
+#!/bin/bash
+ulimit  -c unlimited
+
+cd lauthc
+su mhsdm -c "./run.sh"
+cd ..
+
+cd jmonitor
+su mhsdm -c "./run.sh"
+
+

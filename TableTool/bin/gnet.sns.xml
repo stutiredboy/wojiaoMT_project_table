@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<application name="sns" shareHome="../../../share" pvids="">
+     <!-- bean -->
+	<bean name="UserRoleBean">
+		<variable name="userid" type="long"/>
+		<variable name="roleid" type="long"/>
+	</bean>
+
+	<bean name="RoleInfoBean">
+		<variable name="roleid" type="long"/>
+		<variable name="rolename" type="octets"/>
+		<variable name="gender" type="byte" default="0"/>
+		<variable name="race" type="int" default="0"/>
+		<variable name="occupation" type="int" default="0"/>
+		<variable name="level" type="int" default="0"/>
+		<variable name="extinfo" type="octets"/>
+	</bean>
+
+	<bean name="RoleStatusBean">
+		<enum name="STATUS_OFFLINE" value="0"/>
+		<enum name="STATUS_ONLINE_GAME" value="1"/>
+		<enum name="STATUS_ONLINE_IM" value="2"/>
+		<enum name="STATUS_ONLINE_WEB" value="4"/>
+		<enum name="STATUS_INVISIABLE" value="128"/>
+		<variable name="status" type="byte"/>
+		<variable name="statusinfo" type="octets"/>
+	</bean>
+
+	<bean name="RoleForbidBean">
+		<enum name="FORBID_PRE_DELETE" value="1"/>
+		<enum name="FORBID_LOGIN" value="2"/>
+		<enum name="FORBID_MUTE" value="3"/>
+		<variable name="endtime" type="map" key="int" value="long"/>
+		<variable name="extinfo" type="octets"/>
+	</bean>
+
+	<bean name="RoleBean">
+		<variable name="info" type="RoleInfoBean"/>
+		<variable name="status" type="RoleStatusBean"/>
+	</bean>
+
+	<bean name="RoleDetailBean">
+		<variable name="info" type="RoleInfoBean"/>
+		<variable name="status" type="RoleStatusBean"/>
+		<variable name="forbid" type="RoleForbidBean"/>
+	</bean>
+
+	<bean name="RoleGroupBean">
+		<variable name="gtype" type="int"/>
+		<variable name="groupid" type="long"/>
+		<variable name="groupname" type="octets"/>
+		<variable name="friends" type="vector" value="RoleBean"/>
+	</bean>
+
+	<bean name="RoleMsgBean">
+		<variable name="sender" type="long"/>
+		<variable name="sendername" type="octets"/>
+		<variable name="time" type="long"/>
+		<variable name="emotiongroup" type="int" default="0"/>
+		<variable name="content" type="octets"/>
+	</bean>
+
+	<bean name="FactionIDBean">
+		<variable name="ftype" type="int" default="0"/>
+		<variable name="factionid" type="long"/>
+	</bean>
+
+	<bean name="FactionInfoBean">
+		<variable name="factionname" type="octets"/>
+		<variable name="announcement" type="octets"/>
+		<variable name="extinfo" type="octets"/>
+	</bean>
+
+	<bean name="FactionTitleBean">
+		<variable name="titleid" type="int"/>
+		<variable name="titlename" type="octets"/>
+		<variable name="members" type="vector" value="RoleBean"/>
+	</bean>
+
+	<!-- zonedeliverd 和 gdeliverd 之间 min 8101, max 8120 -->
+	<!-- 系统和通用协议 -->
+	<protocol name="AnnounceZoneidToIM" type="8101" maxsize="64" prior="1">
+		<variable name="aid" type="int"/>
+		<variable name="zoneid" type="int"/>
+		<variable name="boottime" type="long"/>
+	</protocol>
+
+	<protocol name="GameSysMsg" type="8102" maxsize="2048" prior="1">
+	        <variable name="mtype" type="int"/>
+		<variable name="time" type="long"/>
+		<variable name="emotiongroup" type="int" default="0"/>
+		<variable name="content" type="octets"/>
+	</protocol>
+
+	<protocol name="GameDataReq" type="8103" maxsize="1024" prior="1">
+		<variable name="dtype" type="int"/>
+		<variable name="id" type="long"/>
+	</protocol>
+
+	<protocol name="GameDataResp" type="8104" maxsize="1048576" prior="1">
+		<variable name="dtype" type="int"/>
+		<variable name="id" type="long"/>
+		<variable name="retcode" type="byte"/>
+		<variable name="data" type="octets"/>
+	</protocol>
+
+	<protocol name="IMKeepAlive" type="8105" maxsize="1024" prior="1">
+		<variable name="code" type="byte"/>
+	</protocol>
+
+	<protocol name="AnnounceResp" type="8106" maxsize="1024" prior="1">
+		<enum name="RET_OK" value="0"/>
+		<enum name="RET_INVALID_ZONE" value="1"/>
+		<enum name="RET_DUPLICATE" value="2"/>
+		<enum name="RET_MULTIZONE" value="3"/>
+		<variable name="code" type="int"/>
+		<variable name="boottime" type="long"/>
+	</protocol>
+
+	<!-- 角色和好友 min 8121, max 8160 -->
+	<protocol name="RoleListReq" type="8121" maxsize="32" prior="1">
+		<variable name="userid" type="long"/>
+	</protocol>
+
+	<protocol name="RoleListResp" type="8122" maxsize="2048" prior="1">
+		<variable name="userid" type="long"/>
+		<variable name="roles" type="vector" value="RoleDetailBean"/>
+	</protocol>
+
+	<protocol name="RoleRelationReq" type="8123" maxsize="32" prior="1">
+		<variable name="userid" type="long"/>
+		<variable name="roleid" type="long"/>
+	</protocol>
+
+	<protocol name="RoleRelationResp" type="8124" maxsize="1048576" prior="1">
+		<variable name="userid" type="long"/>
+		<variable name="roleinfo" type="RoleBean"/>
+		<variable name="factions" type="vector" value="FactionIDBean"/>
+		<variable name="friends" type="vector" value="RoleGroupBean"/>
+		<variable name="blacklist" type="vector" value="RoleInfoBean"/>
+	</protocol>
+
+	<protocol name="RoleStatusReq" type="8125" maxsize="65535" prior="1">
+		<variable name="localrid" type="long" default="0"/>
+		<variable name="rolelist" type="vector" value="long"/>
+	</protocol>
+
+	<protocol name="RoleStatusResp" type="8126" maxsize="1048576" prior="1">
+		<variable name="localrid" type="long" default="0"/>
+		<variable name="rolestatus" type="map" key="long" value="RoleStatusBean"/>
+	</protocol>
+
+	<protocol name="RoleStatusUpdate" type="8127" maxsize="65535" prior="1">
+		<variable name="roleid" type="long"/>
+		<variable name="status" type="RoleStatusBean"/>
+		<variable name="friends" type="vector" value="long"/>
+		<variable name="factions" type="vector" value="FactionIDBean"/>
+	</protocol>
+
+	<protocol name="RoleGroupUpdate" type="8128" maxsize="1024" prior="1">
+	        <variable name="roleid" type="long"/>
+		<variable name="gtype" type="int"/>
+		<variable name="groupid" type="long"/>
+		<variable name="groupname" type="octets"/>
+
+		<enum name="OP_ADD" value="0"/>
+		<enum name="OP_DEL" value="1"/>
+		<enum name="OP_MOD" value="2"/>
+		<variable name="operation" type="byte"/>
+	</protocol>
+
+	<protocol name="RoleFriendUpdate" type="8129" maxsize="1024" prior="1">
+		<variable name="roleid" type="long"/>
+		<variable name="rolefriend" type="RoleBean"/>
+		<variable name="gtype" type="int"/>
+		<variable name="groupid" type="long"/>
+		
+		<enum name="FRIEND_ADD" value="0"/>
+		<enum name="FRIEND_DEL" value="1"/>
+		<enum name="FRIEND_MOVE" value="2"/>
+		<variable name="operation" type="byte"/>
+	</protocol>
+
+	<protocol name="RoleBlacklistUpdate" type="8130" maxsize="1024" prior="1">
+		<variable name="roleid" type="long"/>
+		<variable name="target" type="RoleInfoBean"/>
+		<enum name="BLACKLIST_ADD" value="0"/>
+		<enum name="BLACKLIST_DEL" value="1"/>
+		<variable name="operation" type="byte"/>
+	</protocol>
+
+	<protocol name="RoleMsg" type="8131" maxsize="65535" prior="1">
+		<variable name="receiver" type="long"/>
+		<variable name="message" type="RoleMsgBean"/>
+	</protocol>
+
+	<protocol name="RoleOfflineMessages" type="8132" maxsize="1048576" prior="1">
+		<variable name="receiver" type="long"/>
+		<variable name="messages" type="vector" value="RoleMsgBean"/>
+	</protocol>
+
+	<protocol name="RoleActivation" type="8133" maxsize="64" prior="1">
+		<variable name="roleid" type="long"/>
+
+		<enum name="OP_ACTIVATE" value="0"/>
+		<enum name="OP_DEACTIVATE" value="1"/>
+		<variable name="operation" type="byte"/>
+	</protocol>
+
+	<protocol name="RemoveRole" type="8134" maxsize="64" prior="1">
+		<variable name="userid" type="long"/>
+		<variable name="roleid" type="long"/>
+	</protocol>
+
+	<protocol name="RoleInfoUpdate" type="8135" maxsize="65535" prior="1">
+		<variable name="roleinfo" type="RoleInfoBean"/>
+
+		<enum name="UPDATE_NAME" value="1"/>
+		<enum name="UPDATE_GENDER" value="2"/>
+		<enum name="UPDATE_RACE" value="4"/>
+		<enum name="UPDATE_OCCUPATION" value="8"/>
+		<enum name="UPDATE_LEVEL" value="16"/>
+		<enum name="UPDATE_EXT" value="32768"/>
+		<variable name="updateflag" type="int"/>
+	</protocol>
+
+	<protocol name="RoleForbidUpdate" type="8136" maxsize="65535" prior="1">
+		<variable name="forbids" type="map" key="long" value="RoleForbidBean"/>
+	</protocol>
+
+	<protocol name="RoleInfoReq" type="8137" maxsize="1024" prior="1">
+		<variable name="localuid" type="long"/>
+		<variable name="roleid" type="long"/>
+	</protocol>
+
+	<protocol name="RoleInfoResp" type="8138" maxsize="65535" prior="1">
+		<variable name="localuid" type="long"/>
+		<variable name="roleinfo" type="RoleInfoBean"/>
+	</protocol>
+
+
+	<!-- 公会和成员 min 8161 -->
+	<protocol name="FactionInfoReq" type="8161" maxsize="32" prior="1">
+		<variable name="localuid" type="long"/>
+		<variable name="factionid" type="FactionIDBean"/>
+	</protocol>
+
+	<protocol name="FactionInfoResp" type="8162" maxsize="1048576" prior="1">
+		<variable name="localuid" type="long"/>
+		<variable name="factionid" type="FactionIDBean"/>
+		<variable name="factioninfo" type="FactionInfoBean"/>
+		<variable name="members" type="vector" value="FactionTitleBean"/>
+		<variable name="forbidlist" type="octets"/>
+	</protocol>
+
+	<protocol name="FactionMemberUpdate" type="8163" maxsize="1048576" prior="1">
+		<variable name="factionid" type="FactionIDBean"/>
+		<variable name="roles" type="vector" value="RoleBean"/>
+		<variable name="titleid" type="int"/>
+
+		<enum name="MEMBER_ADD" value="0"/>
+		<enum name="MEMBER_DEL" value="1"/>
+		<enum name="MEMBER_MOVE" value="2"/>
+		<variable name="operation" type="byte"/>
+	</protocol>
+
+	<protocol name="FactionInfoUpdate" type="8164" maxsize="65535" prior="1">
+		<variable name="factionid" type="FactionIDBean"/>
+		<variable name="factioninfo" type="FactionInfoBean"/>
+
+		<enum name="UPDATE_NAME" value="1"/>
+		<enum name="UPDATE_ANNOUNCE" value="2"/>
+		<enum name="UPDATE_EXT" value="32768"/>
+		<variable name="updateflag" type="int"/>
+	</protocol>
+
+	<protocol name="FactionMsg" type="8165" maxsize="65535" prior="1">
+		<variable name="factionid" type="FactionIDBean"/>
+		<variable name="message" type="RoleMsgBean"/>
+	</protocol>
+
+	<protocol name="RemoveFaction" type="8166" maxsize="64" prior="1">
+		<variable name="factionid" type="FactionIDBean"/>
+	</protocol>
+
+	<protocol name="FactionForbidUpdate" type="8167" maxsize="1048576" prior="1">
+		<variable name="factionid" type="FactionIDBean"/>
+		<variable name="updateforbid" type="octets"/>
+	</protocol>
+</application>
+

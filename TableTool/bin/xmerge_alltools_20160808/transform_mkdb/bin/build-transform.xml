@@ -1,0 +1,110 @@
+<project name="xtransform" default="default">
+
+<property name="xbean.jar" value="xbean.jar"/>	
+<property name="xml" value="test.xml"/>
+<property name="srcdb" value="src_db/"/>
+<property name="destdb" value="dest_db"/>
+	
+<!-- libpath: .dll or .so , monkeyking.jar , jio.jar -->
+<property name="libpath" value="../bin"/>
+	
+<property name="xgenoutput" value="transform.xgen.tmp"/>
+	
+<property name="build" value="transform.class.tmp"/>
+
+<target name="clean">
+		<delete dir="${build}"/>
+		<delete dir="${xgenoutput}"/>
+</target>
+	
+<target name="init" depends="clean">
+	<mkdir dir="${build}" />
+	<mkdir dir="${xgenoutput}" />
+	<mkdir dir="${destdb}" />
+</target>
+	
+<!-- 生成不对称的marshal, unmarshal代码 -->
+<target name="xgen.transform">
+	<path id="myclasspath">
+		<pathelement path="${java.class.path}"/>
+		<pathelement path="${xbean.jar}"/>
+		<pathelement path="${libpath}/monkeyking.jar"/>
+		<pathelement path="${libpath}/jio.jar"/>
+	</path>	
+	<java  classname="mkgen.Main" fork="true" classpathref="myclasspath">
+		<arg line="-output ${xgenoutput} -transform ${xml} -srcdb ${srcdb} -destdb ${destdb}"/>
+	</java>
+</target>
+	
+<!-- 编译生成的不对称的marshal, unmarshal代码 -->	
+<target name="compile.transform" depends="init,xgen.transform">
+	<path id="classpath">
+		<pathelement path="${libpath}/jio.jar"/>
+		<pathelement path="${libpath}/monkeyking.jar"/>
+	</path>
+
+	<javac encoding="GBK" srcdir="${xgenoutput}" destdir="${build}"
+		classpathref="classpath" debug="true" debuglevel="lines,source">
+		<compilerarg line="-Xlint:unchecked" />
+	</javac>
+</target>
+
+<!-- 进行倒库,dest_db已经有新的数据库了 -->
+<target name="dotransform" depends="compile.transform">
+	<path id="myclasspath">
+			<pathelement path="${java.class.path}"/>
+			<pathelement path="${libpath}/monkeyking.jar"/>
+			<pathelement path="${libpath}/jio.jar"/>
+			<pathelement path="${build}"/>
+	</path>	
+	<java  classname="Main" fork="true" classpathref="myclasspath">
+		<jvmarg line="-Xss4m -Xms512m -Xmx512m"/>
+		<arg line="${libpath}"/>
+	</java>
+</target>
+	
+<!-- 生成新的xbean -->
+<target name="clean.new">
+		<delete dir="${build}"/>
+		<delete dir="${xgenoutput}"/>
+</target>
+		
+<target name="init.new" depends="clean.new">
+	<mkdir dir="${build}" />
+	<mkdir dir="${xgenoutput}" />
+	<mkdir dir="${destdb}" />
+</target>	
+	
+<target name="xgen.xbean.new" depends="init.new">
+	<path id="myclasspath">
+		<pathelement path="${java.class.path}"/>
+		<pathelement path="${libpath}/monkeyking.jar"/>
+		<pathelement path="${libpath}/jio.jar"/>
+	</path>
+	<java  classname="xgen.Main" fork="true" classpathref="myclasspath">
+		<arg line="${xml} -output ${xgenoutput}"/>
+	</java>
+</target>
+	
+<!-- 编译新的xbean -->
+<target name="compile.xbean.new" depends="xgen.xbean.new">
+	<path id="myclasspath">
+		<pathelement path="${java.class.path}"/>
+		<pathelement path="${libpath}/monkeyking.jar"/>
+		<pathelement path="${libpath}/jio.jar"/>
+	</path>
+	<javac encoding="GBK" srcdir="${xgenoutput}" destdir="${build}"
+		classpathref="myclasspath" debug="true" debuglevel="lines,source">
+		<compilerarg line="-Xlint:unchecked" />
+	</javac>
+</target>
+<!-- 生成新的xbean -->	
+<target name="dist.xbean.new" depends="compile.xbean.new">
+	<jar jarfile="${xbean.jar}.new" basedir="${build}"/>
+</target>
+
+<target name="default" depends="dotransform"></target>
+	
+
+	
+</project>

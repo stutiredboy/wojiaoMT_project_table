@@ -1,0 +1,2 @@
+#!/bin/bash
+/usr/java/jdk1.7.0/bin/java -verbose:gc -Djava.util.logging.config.file=logging.properties -DJava.net.preferIPv4Stack=true -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=27100 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.password.file=jmxremote.password -jar dist/jmonitor.jar mbeandb.xml jmxports.xml access.xml 8000 &

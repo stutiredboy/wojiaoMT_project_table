@@ -1,0 +1,1 @@
+ant -f build-transform.xml -Dxbean.jar=xbean.jar -Dxml=gsx.mkdb.xml -Dsrcdb=src_db -Ddestdb=dest_db -Dlibpath=../bin

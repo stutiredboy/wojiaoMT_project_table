@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<application name="xunbao" shareHome="../../../share" pvids="">
+
+	<!-- 相关 -->
+	<protocol name="Post" type="8020" maxsize="1048576" prior="1">
+		<variable name="aid" type="int"/>
+		<variable name="zoneid" type="int"/>
+		<variable name="seller" type="Trader"/> <!-- 卖家信息  -->
+		<variable name="buyer" type="Trader"/>  <!-- 买家信息（指定买家时赋值） -->
+		<variable name="sn" type="long"/>       <!-- 流水号 -->
+		<variable name="price" type="int"/>     <!-- 售价（游戏内寄售并上架时赋值）  -->
+		<variable name="shelf" type="byte"/>    <!-- 只寄售则为0，寄售并上架则为1 -->
+		<variable name="posttype" type="int"/>  <!-- 寄售类型，1-游戏币，2-普通物品，3-宠物，4-角色 -->
+		<variable name="num" type="int"/>       <!-- 除了可堆叠物品，其他均为1 -->
+		<variable name="loginip" type="int"/>   <!-- 玩家ip，用于统计及监测工作室等 -->
+		<variable name="time" type="TimeInfo"/> <!-- 寄售相关时间 -->
+		<variable name="info" type="PostInfo"/> <!-- 寄售物品的信息 -->
+		<variable name="backup" type="octets"/> <!-- 物品完整信息，用于补物品 -->
+		<variable name="timestamp" type="long"/><!-- 标识本次发送的Post,暂时没用，赋值为0即可 --> 
+		<variable name="reserved1" type="int"/> <!-- 保留字段 -->
+		<variable name="reserved2" type="int"/> <!-- 保留字段 -->
+	</protocol>
+	
+	<bean name="Trader"> 
+		<variable name="userid" type="int"/>
+		<variable name="roleid" type="long"/>
+		<variable name="rolename" type="octets"/>
+	</bean>
+
+	<bean name="PostInfo"> 
+		<variable name="detail" type="octets"/>
+	</bean>
+
+	<bean name="TimeInfo"> 
+		<variable name="actiontime" type="long"/>  <!--动作发起时间点,ms为单位 -->
+		<variable name="showperiod" type="int"/> <!-- 公示期时长min为单位-->
+		<variable name="sellperiod" type="int"/> <!-- 出售时长min为单位 -->
+		<variable name="postperiod" type="int"/> <!-- 寄售时长min为单位 -->
+	</bean>
+
+	<!-- retcode标识平台的处理结果-->
+	0.成功；
+	1.同一sn重复寄售(gs认为是寄售成功)； 
+	2.密保等级不够，不能寄售（gs认为是寄售失败，不重发）； 
+	3.其他错误（重发）； 
+	4.往平台发送数据失败（重发）； 
+	5.物品不存在（平台根据xml查不到该物品，gs收到该错误码认为寄售失败，不重发）；
+	6.因为回档造成的sn冲突（gs认为寄售失败，不重发）； 
+	7.帐号被封，禁止寄售物品（gs认为寄售失败，不重发）;  	
+	-1.平台数据库错误（重发）；
+	<protocol name="Post_Re" type="8021" maxsize="128" prior="1">
+		<variable name="userid" type="int"/>
+		<variable name="roleid" type="long"/>
+		<variable name="sn" type="long" />
+		<variable name="time" type="TimeInfo"/><!-- 只关注showperiod和postperiod即可-->
+		<variable name="retcode" type="int" />
+		<variable name="timestamp" type="long"/> 
+		<variable name="buylevel" type="int" />
+		<variable name="reserved1" type="int"/>
+		<variable name="reserved2" type="int"/>
+	</protocol>
+	
+	<protocol name="GamePostCancel" type="8022" maxsize="128" prior="1">
+		<variable name="userid" type="int"/>
+		<variable name="roleid" type="long" />
+		<variable name="sn" type="long" />
+		<variable name="timestamp" type="long"/> 
+		<variable name="reserved1" type="int"/>
+		<variable name="reserved2" type="int"/>
+	</protocol>
+    
+	<protocol name="GamePostCancel_Re" type="8023" maxsize="128" prior="1">
+		<variable name="userid" type="int"/>
+		<variable name="roleid" type="long" />
+		<variable name="sn" type="long" /> 
+		<variable name="retcode" type="int" />
+		<variable name="timestamp" type="long"/> 
+		<variable name="reserved1" type="int"/>
+		<variable name="reserved2" type="int"/>
+	</protocol>
+	
+	<protocol name="WebPostCancel" type="8024" maxsize="128" prior="1">
+		<variable name="userid" type="int"/>
+		<variable name="roleid" type="long" />
+		<variable name="sn" type="long" />
+		<variable name="ctype" type="int" />
+		<variable name="messageid" type="long" />
+		<variable name="timestamp" type="long"/> 
+		<variable name="reserved1" type="int"/>
+		<variable name="reserved2" type="int"/>
+	</protocol>
+    
+	<protocol name="WebPostCancel_Re" type="8025" maxsize="128" prior="1">
+		<variable name="userid" type="int"/>
+		<variable name="roleid" type="long" />
+		<variable name="sn" type="long" /> 
+		<variable name="retcode" type="int" />
+		<variable name="messageid" type="long" />
+		<variable name="reserved1" type="int"/>
+		<variable name="reserved2" type="int"/>
+	</protocol>
+	
+	<protocol name="Shelf" type="8026" maxsize="128" prior="1">
+		<variable name="userid" type="int"/>
+		<variable name="roleid" type="long" />
+		<variable name="sn" type="long" />
+		<variable name="price" type="int"/>
+		<variable name="time" type="TimeInfo"/> <!-- 仅关注actiontime(上架时间),showperiod和sellperiod -->
+		<variable name="buyerroleid" type="long" /><!-- 如果指定买家，则赋值 -->
+		<variable name="messageid" type="long" />
+		<variable name="timestamp" type="long"/> 
+		<variable name="reserved1" type="int" />
+		<variable name="reserved2" type="int" />
+	</protocol>
+	<protocol name="Shelf_Re" type="8027" maxsize="128" prior="1">
+		<variable name="userid" type="int"/>
+		<variable name="roleid" type="long" />
+		<variable name="sn" type="long" />
+		<variable name="retcode" type="int" />
+		<variable name="messageid" type="long" />
+		<variable name="reserved1" type="int"/>
+		<variable name="reserved2" type="int"/>
+	</protocol>
+	
+	<protocol name="ShelfCancel" type="8028" maxsize="128" prior="1">
+		<variable name="userid" type="int"/>
+		<variable name="roleid" type="long" />
+		<variable name="sn" type="long" />
+		<variable name="messageid" type="long" />
+		<variable name="timestamp" type="long"/> 
+		<variable name="reserved1" type="int"/>
+		<variable name="reserved2" type="int"/>
+	</protocol>
+	<protocol name="ShelfCancel_Re" type="8029" maxsize="128" prior="1">
+		<variable name="userid" type="int"/>
+		<variable name="roleid" type="long" />
+		<variable name="sn" type="long" />
+		<variable name="retcode" type="int" />
+		<variable name="messageid" type="long" />
+		<variable name="reserved1" type="int"/>
+		<variable name="reserved2" type="int"/>
+	</protocol>
+	
+	<protocol name="Sold" type="8030" maxsize="128" prior="1">
+		<variable name="zoneid" type="int" />
+		<variable name="selleruserid" type="int"/>
+		<variable name="sellerroleid" type="long" />
+		<variable name="buyeruserid" type="int"/>
+		<variable name="buyerroleid" type="long" />
+		<variable name="sn" type="long" />
+		<variable name="orderid" type="long" /> 订单号
+		<variable name="stype" type="int" />    售出类型（默认为0）
+		<variable name="timestamp" type="long"/> 
+		<variable name="reserved1" type="int" />
+		<variable name="reserved2" type="int" />
+	</protocol>
+	<protocol name="Sold_Re" type="8031" maxsize="128" prior="1">
+		<variable name="zoneid" type="int" />
+		<variable name="selleruserid" type="int"/>
+		<variable name="sellerroleid" type="long" />
+		<variable name="buyeruserid" type="int"/>
+		<variable name="buyerroleid" type="long" />
+		<variable name="sn" type="long" />
+		<variable name="retcode" type="int" />
+		<variable name="orderid" type="long" />
+		<variable name="reserved1" type="int"/>
+		<variable name="reserved2" type="int"/>
+	</protocol>
+	
+	<protocol name="PostExpire" type="8032" maxsize="128" prior="1">
+		<variable name="userid" type="int"/>
+		<variable name="roleid" type="long" />
+		<variable name="sn" type="long" />
+		<variable name="messageid" type="long" />
+		<variable name="timestamp" type="long"/> 
+		<variable name="reserved1" type="int"/>
+		<variable name="reserved2" type="int"/>
+	</protocol>
+	<protocol name="PostExpire_Re" type="8033" maxsize="128" prior="1">
+		<variable name="userid" type="int"/>
+		<variable name="roleid" type="long" />
+		<variable name="sn" type="long" />
+		<variable name="retcode" type="int" />
+		<variable name="messageid" type="long" />
+		<variable name="reserved1" type="int"/>
+		<variable name="reserved2" type="int"/>
+	</protocol>
+	
+	<protocol name="WebGetRoleList" type="8034" maxsize="128" prior="1">
+		<variable name="userid" type="int"/>
+		<variable name="messageid" type="long" />
+		<variable name="timestamp" type="long"/> 
+		<variable name="reserved1" type="int"/>
+		<variable name="reserved2" type="int"/>
+	</protocol>
+	
+	<protocol name="WebGetRoleList_Re" type="8035" maxsize="65536" prior="1">
+		<variable name="aid" type="int" />
+		<variable name="userid" type="int"/>
+		<variable name="retcode" type="int" /> 处理结果
+		<variable name="rolelist" type="vector" value="Role"/> 角色列表
+		<variable name="messageid" type="long" /> 消息id，平台以此唯一标识一个消息
+		<variable name="reserved1" type="int"/>
+		<variable name="reserved2" type="int"/>
+	</protocol>
+
+	<bean name="Role">
+		<variable name="RoleSimpleInfo" type="octets"/>		
+	</bean>
+
+	<protocol name="NewKeepAlive" type="8036" maxsize="32" prior="1">
+		<variable name="reserved" type="int" />
+	</protocol>
+
+</application>	
