@@ -153,6 +153,22 @@
 			  <variable name="shuxing3bodongquanzhong" type="vector" value="int" fromCol="属性3波动段1权重,属性3波动段2权重,属性3波动段3权重,属性3波动段4权重,属性3波动段5权重" />
 		</bean>
 
+		<bean name="SXilianEffect" from="x洗练效果配置" genxml="server">
+			<variable name="id" type="int" fromCol="id" />
+			<variable name="attrId" type="int" fromCol="属性id" />
+			<variable name="attrName" type="string" fromCol="属性名" />
+			<variable name="attrInitvalue" type="int" fromCol="初始值" />
+			<variable name="attrAddvalue" type="int" fromCol="增加值" />
+		</bean>
+
+		<bean name="CXilianEffect" from="x洗练效果配置" genxml="client" gencode="mtlua">
+			<variable name="id" type="int" fromCol="属性id" />
+			<variable name="attrName" type="string" fromCol="属性名" />
+			<variable name="attrInitvalue" type="int" fromCol="初始值" />
+			<variable name="attrAddvalue" type="int" fromCol="增加值" />
+		</bean>
+		
+		
 		<bean name="SEquipAddattributelib" from="z装备系统相关配置表/z装备附加属性库" genxml="server">
 			<variable name="id" type="int" fromCol="附加属性id" /> id
 			<variable name="namecolour" type="string" fromCol="颜色" />
@@ -1133,7 +1149,35 @@
 		<variable name="holsLevel" type="vector" value="int" fromCol="槽1开启等级,槽2开启等级,槽3开启等级"/>
 	</bean>
 	
-	<bean name="DSEquipLvGemInfo" from="D点卡服表格/b宝石镶嵌表点卡服" genxml="server" baseclass="SEquipLvGemInfo">
+	<bean name="DSEquipLvGemInfo" from="z装备系统相关配置表/b宝石镶嵌表点卡服" genxml="server" baseclass="SEquipLvGemInfo">
 	</bean>
 	
-	</namespace>
+	<bean name="CTaozhuangEffect" from="z装备系统相关配置表/t套装效果表" genxml="client" gencode="mtlua">
+		<variable name="id" type="int" fromCol="套装效果ID" />
+		<variable name="skillId" type="int" fromCol="技能ID"/>
+		<variable name="effect1" type="int" fromCol="套装效果1"/>
+		<variable name="effect2" type="int" fromCol="套装效果2"/>
+		<variable name="effect3" type="int" fromCol="套装效果3"/>
+	</bean>
+	
+	<bean name="STaozhuangEffect" from="z装备系统相关配置表/t套装效果表" genxml="server">
+		<variable name="id" type="int" fromCol="套装效果ID" />
+		<variable name="skillId" type="int" fromCol="技能ID"/>
+		<variable name="effect1" type="int" fromCol="套装效果1"/>
+		<variable name="effect2" type="int" fromCol="套装效果2"/>
+		<variable name="effect3" type="int" fromCol="套装效果3"/>
+	</bean>
+	
+	<bean name="CTaozhuangEffectConfig" from="z装备系统相关配置表/t套装效果配置表" genxml="client" gencode="mtlua">
+		<variable name="id" type="int" fromCol="id" />
+		<variable name="successRate" type="int" fromCol="点化成功几率"/>
+		<variable name="needCount" type="int" fromCol="装备触发数量"/>
+		<variable name="effectDesc" type="string" fromCol="套装效果描述"/>
+	</bean>
+	
+	<bean name="STaozhuangEffectConfig" from="z装备系统相关配置表/t套装效果配置表" genxml="server">
+		<variable name="id" type="int" fromCol="id" />
+		<variable name="successRate" type="int" fromCol="点化成功几率"/>
+		<variable name="needCount" type="int" fromCol="装备触发数量"/>
+	</bean>
+</namespace>
