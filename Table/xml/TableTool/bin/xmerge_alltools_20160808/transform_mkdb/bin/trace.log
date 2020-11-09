@@ -1,0 +1,296 @@
+2016-03-21 15:03:51.404 INFO  <main> mkdb.util.Dbx start ...
+2016-03-21 15:03:51.406 INFO  <main> System.load(/home/cn/myserver/serverbin/serverbin/transform_mkdb/bin/../bin/libdb_amd64.so)
+2016-03-21 15:08:19.425 INFO  <main> mkdb.util.Dbx start ...
+2016-03-21 15:08:19.427 INFO  <main> System.load(/home/cn/myserver/serverbin/serverbin/transform_mkdb/bin/../bin/libdb_amd64.so)
+2016-03-21 15:12:48.494 INFO  <main> mkdb.util.Dbx start ...
+2016-03-21 15:12:48.495 INFO  <main> System.load(/home/cn/myserver/serverbin/serverbin/transform_mkdb/bin/libdb_amd64.so)
+2016-03-21 15:15:58.095 INFO  <main> mkdb.util.Dbx start ...
+2016-03-21 15:15:58.120 INFO  <main> System.load(/tmp/libdb_amd645204278045634403043.so)
+2016-03-21 15:16:06.179 INFO  <main> mkdb.util.Dbx stop begin
+2016-03-21 15:16:06.179 INFO  <main> mkdb.util.Dbx stop end
+2016-03-21 15:16:06.183 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-03-21 15:28:38.650 INFO  <main> mkdb.util.Dbx start ...
+2016-03-21 15:28:38.672 INFO  <main> System.load(/tmp/libdb_amd642932212177374060657.so)
+2016-03-21 15:28:46.725 INFO  <main> mkdb.util.Dbx stop begin
+2016-03-21 15:28:46.725 INFO  <main> mkdb.util.Dbx stop end
+2016-03-21 15:28:46.727 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-03-21 20:48:04.771 INFO  <main> mkdb.util.Dbx start ...
+2016-03-21 20:48:04.792 INFO  <main> System.load(/tmp/libdb_amd641807561068415171229.so)
+2016-03-21 20:48:13.633 INFO  <main> mkdb.util.Dbx stop begin
+2016-03-21 20:48:13.633 INFO  <main> mkdb.util.Dbx stop end
+2016-03-21 20:48:13.637 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-03-22 20:33:09.419 INFO  <main> mkdb.util.Dbx start ...
+2016-03-22 20:33:09.455 INFO  <main> System.load(/tmp/libdb_amd641597498352290880269.so)
+2016-03-22 20:33:17.710 INFO  <main> mkdb.util.Dbx stop begin
+2016-03-22 20:33:17.711 INFO  <main> mkdb.util.Dbx stop end
+2016-03-22 20:33:17.714 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-03-24 20:47:00.536 INFO  <main> mkdb.util.Dbx start ...
+2016-03-24 20:47:00.557 INFO  <main> System.load(/tmp/libdb_amd643879357683554092550.so)
+2016-03-24 20:47:08.965 INFO  <main> mkdb.util.Dbx stop begin
+2016-03-24 20:47:08.966 INFO  <main> mkdb.util.Dbx stop end
+2016-03-24 20:47:08.969 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-03-28 20:38:41.295 INFO  <main> mkdb.util.Dbx start ...
+2016-03-28 20:38:41.321 INFO  <main> System.load(/tmp/libdb_amd64727543600915298136.so)
+2016-03-28 20:38:49.898 INFO  <main> mkdb.util.Dbx stop begin
+2016-03-28 20:38:49.899 INFO  <main> mkdb.util.Dbx stop end
+2016-03-28 20:38:49.902 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-03-29 12:36:32.611 INFO  <main> mkdb.util.Dbx start ...
+2016-03-29 12:36:32.641 INFO  <main> System.load(/tmp/libdb_amd642534191473682803770.so)
+2016-03-29 12:36:40.974 INFO  <main> mkdb.util.Dbx stop begin
+2016-03-29 12:36:40.975 INFO  <main> mkdb.util.Dbx stop end
+2016-03-29 12:36:40.978 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-03-30 20:43:39.538 INFO  <main> mkdb.util.Dbx start ...
+2016-03-30 20:43:39.566 INFO  <main> System.load(/tmp/libdb_amd643573310059733792504.so)
+2016-03-30 20:43:48.254 INFO  <main> mkdb.util.Dbx stop begin
+2016-03-30 20:43:48.255 INFO  <main> mkdb.util.Dbx stop end
+2016-03-30 20:43:48.258 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-03-31 20:37:10.441 INFO  <main> mkdb.util.Dbx start ...
+2016-03-31 20:37:10.468 INFO  <main> System.load(/tmp/libdb_amd644082341326069709298.so)
+2016-03-31 20:37:18.889 INFO  <main> mkdb.util.Dbx stop begin
+2016-03-31 20:37:18.890 INFO  <main> mkdb.util.Dbx stop end
+2016-03-31 20:37:18.893 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-03-31 21:49:30.652 INFO  <main> mkdb.util.Dbx start ...
+2016-03-31 21:49:30.697 INFO  <main> System.load(/tmp/libdb_amd641743066242530760470.so)
+2016-03-31 21:49:40.111 INFO  <main> mkdb.util.Dbx stop begin
+2016-03-31 21:49:40.112 INFO  <main> mkdb.util.Dbx stop end
+2016-03-31 21:49:40.116 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-05 10:37:18.249 INFO  <main> mkdb.util.Dbx start ...
+2016-04-05 10:37:18.270 INFO  <main> System.load(/tmp/libdb_amd642497212331790393564.so)
+2016-04-05 10:37:28.014 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-05 10:37:28.014 INFO  <main> mkdb.util.Dbx stop end
+2016-04-05 10:37:28.018 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-06 20:19:51.119 INFO  <main> mkdb.util.Dbx start ...
+2016-04-06 20:19:51.143 INFO  <main> System.load(/tmp/libdb_amd641692810302814993196.so)
+2016-04-06 20:19:59.735 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-06 20:19:59.736 INFO  <main> mkdb.util.Dbx stop end
+2016-04-06 20:19:59.739 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-07 20:39:10.928 INFO  <main> mkdb.util.Dbx start ...
+2016-04-07 20:39:10.951 INFO  <main> System.load(/tmp/libdb_amd641091474916357776181.so)
+2016-04-07 20:39:19.963 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-07 20:39:19.963 INFO  <main> mkdb.util.Dbx stop end
+2016-04-07 20:39:19.967 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-08 10:46:46.829 INFO  <main> mkdb.util.Dbx start ...
+2016-04-08 10:46:46.863 INFO  <main> System.load(/tmp/libdb_amd646251863494047520207.so)
+2016-04-08 10:46:55.692 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-08 10:46:55.692 INFO  <main> mkdb.util.Dbx stop end
+2016-04-08 10:46:55.696 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-08 17:46:16.555 INFO  <main> mkdb.util.Dbx start ...
+2016-04-08 17:46:16.599 INFO  <main> System.load(/tmp/libdb_amd647335461330569829915.so)
+2016-04-08 17:46:25.950 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-08 17:46:25.951 INFO  <main> mkdb.util.Dbx stop end
+2016-04-08 17:46:25.955 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-10 12:38:26.675 INFO  <main> mkdb.util.Dbx start ...
+2016-04-10 12:38:26.717 INFO  <main> System.load(/tmp/libdb_amd648087770852743127839.so)
+2016-04-10 12:38:35.623 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-10 12:38:35.623 INFO  <main> mkdb.util.Dbx stop end
+2016-04-10 12:38:35.627 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-11 10:44:00.344 INFO  <main> mkdb.util.Dbx start ...
+2016-04-11 10:44:00.391 INFO  <main> System.load(/tmp/libdb_amd644691398036654982103.so)
+2016-04-11 10:44:09.281 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-11 10:44:09.281 INFO  <main> mkdb.util.Dbx stop end
+2016-04-11 10:44:09.285 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-11 20:26:48.741 INFO  <main> mkdb.util.Dbx start ...
+2016-04-11 20:26:48.782 INFO  <main> System.load(/tmp/libdb_amd648416192257733572349.so)
+2016-04-11 20:26:57.909 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-11 20:26:57.910 INFO  <main> mkdb.util.Dbx stop end
+2016-04-11 20:26:57.914 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-11 22:13:19.818 INFO  <main> mkdb.util.Dbx start ...
+2016-04-11 22:13:19.839 INFO  <main> System.load(/tmp/libdb_amd647834526540711361105.so)
+2016-04-11 22:13:28.625 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-11 22:13:28.625 INFO  <main> mkdb.util.Dbx stop end
+2016-04-11 22:13:28.628 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-12 20:23:07.394 INFO  <main> mkdb.util.Dbx start ...
+2016-04-12 20:23:07.415 INFO  <main> System.load(/tmp/libdb_amd642032627529478760134.so)
+2016-04-12 20:23:16.333 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-12 20:23:16.333 INFO  <main> mkdb.util.Dbx stop end
+2016-04-12 20:23:16.337 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-13 21:38:36.515 INFO  <main> mkdb.util.Dbx start ...
+2016-04-13 21:38:36.536 INFO  <main> System.load(/tmp/libdb_amd641245561942372337493.so)
+2016-04-13 21:38:45.501 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-13 21:38:45.502 INFO  <main> mkdb.util.Dbx stop end
+2016-04-13 21:38:45.505 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-15 11:36:34.862 INFO  <main> mkdb.util.Dbx start ...
+2016-04-15 11:36:34.883 INFO  <main> System.load(/tmp/libdb_amd642539032342851678710.so)
+2016-04-15 11:36:43.530 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-15 11:36:43.531 INFO  <main> mkdb.util.Dbx stop end
+2016-04-15 11:36:43.534 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-15 15:47:32.534 INFO  <main> mkdb.util.Dbx start ...
+2016-04-15 15:47:32.576 INFO  <main> System.load(/tmp/libdb_amd642143261951494356558.so)
+2016-04-15 15:47:41.153 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-15 15:47:41.153 INFO  <main> mkdb.util.Dbx stop end
+2016-04-15 15:47:41.157 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-15 21:17:02.383 INFO  <main> mkdb.util.Dbx start ...
+2016-04-15 21:17:02.404 INFO  <main> System.load(/tmp/libdb_amd646039731744864946965.so)
+2016-04-15 21:17:10.954 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-15 21:17:10.954 INFO  <main> mkdb.util.Dbx stop end
+2016-04-15 21:17:10.958 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-16 15:14:53.762 INFO  <main> mkdb.util.Dbx start ...
+2016-04-16 15:14:53.784 INFO  <main> System.load(/tmp/libdb_amd645875000479019439354.so)
+2016-04-16 15:15:02.396 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-16 15:15:02.396 INFO  <main> mkdb.util.Dbx stop end
+2016-04-16 15:15:02.400 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-16 16:01:19.999 INFO  <main> mkdb.util.Dbx start ...
+2016-04-16 16:01:20.020 INFO  <main> System.load(/tmp/libdb_amd647349826301461446594.so)
+2016-04-16 16:01:28.695 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-16 16:01:28.696 INFO  <main> mkdb.util.Dbx stop end
+2016-04-16 16:01:28.699 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-18 20:50:09.565 INFO  <main> mkdb.util.Dbx start ...
+2016-04-18 20:50:09.586 INFO  <main> System.load(/tmp/libdb_amd647929403264799651204.so)
+2016-04-18 20:50:18.259 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-18 20:50:18.260 INFO  <main> mkdb.util.Dbx stop end
+2016-04-18 20:50:18.263 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-19 10:59:49.809 INFO  <main> mkdb.util.Dbx start ...
+2016-04-19 10:59:49.831 INFO  <main> System.load(/tmp/libdb_amd644490245296751801521.so)
+2016-04-19 10:59:58.355 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-19 10:59:58.356 INFO  <main> mkdb.util.Dbx stop end
+2016-04-19 10:59:58.358 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-19 22:45:56.216 INFO  <main> mkdb.util.Dbx start ...
+2016-04-19 22:45:56.237 INFO  <main> System.load(/tmp/libdb_amd644614752520605156676.so)
+2016-04-19 22:46:05.103 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-19 22:46:05.104 INFO  <main> mkdb.util.Dbx stop end
+2016-04-19 22:46:05.107 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-20 01:48:46.285 INFO  <main> mkdb.util.Dbx start ...
+2016-04-20 01:48:46.306 INFO  <main> System.load(/tmp/libdb_amd64648573532197231275.so)
+2016-04-20 01:48:54.856 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-20 01:48:54.857 INFO  <main> mkdb.util.Dbx stop end
+2016-04-20 01:48:54.860 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-20 20:24:33.721 INFO  <main> mkdb.util.Dbx start ...
+2016-04-20 20:24:33.742 INFO  <main> System.load(/tmp/libdb_amd647802042004875875106.so)
+2016-04-20 20:24:42.941 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-20 20:24:42.942 INFO  <main> mkdb.util.Dbx stop end
+2016-04-20 20:24:42.945 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-21 10:58:08.640 INFO  <main> mkdb.util.Dbx start ...
+2016-04-21 10:58:08.674 INFO  <main> System.load(/tmp/libdb_amd646343881694597596474.so)
+2016-04-21 10:58:17.338 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-21 10:58:17.339 INFO  <main> mkdb.util.Dbx stop end
+2016-04-21 10:58:17.342 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-21 17:21:29.527 INFO  <main> mkdb.util.Dbx start ...
+2016-04-21 17:21:29.549 INFO  <main> System.load(/tmp/libdb_amd644871648883811265321.so)
+2016-04-21 17:21:39.699 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-21 17:21:39.700 INFO  <main> mkdb.util.Dbx stop end
+2016-04-21 17:21:39.703 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-21 18:05:28.491 INFO  <main> mkdb.util.Dbx start ...
+2016-04-21 18:05:28.513 INFO  <main> System.load(/tmp/libdb_amd641005664985757769507.so)
+2016-04-21 18:05:37.266 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-21 18:05:37.267 INFO  <main> mkdb.util.Dbx stop end
+2016-04-21 18:05:37.271 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-21 21:18:46.499 INFO  <main> mkdb.util.Dbx start ...
+2016-04-21 21:18:46.537 INFO  <main> System.load(/tmp/libdb_amd645071381971903353222.so)
+2016-04-21 21:18:56.065 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-21 21:18:56.066 INFO  <main> mkdb.util.Dbx stop end
+2016-04-21 21:18:56.070 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-25 21:08:16.259 INFO  <main> mkdb.util.Dbx start ...
+2016-04-25 21:08:16.281 INFO  <main> System.load(/tmp/libdb_amd643792454086490617421.so)
+2016-04-25 21:08:25.608 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-25 21:08:25.609 INFO  <main> mkdb.util.Dbx stop end
+2016-04-25 21:08:25.612 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-27 14:22:42.412 INFO  <main> mkdb.util.Dbx start ...
+2016-04-27 14:22:42.456 INFO  <main> System.load(/tmp/libdb_amd64554742680417592341.so)
+2016-04-27 14:22:52.257 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-27 14:22:52.257 INFO  <main> mkdb.util.Dbx stop end
+2016-04-27 14:22:52.261 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-28 14:35:57.742 INFO  <main> mkdb.util.Dbx start ...
+2016-04-28 14:35:57.785 INFO  <main> System.load(/tmp/libdb_amd64935450463338315499.so)
+2016-04-28 14:36:07.335 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-28 14:36:07.336 INFO  <main> mkdb.util.Dbx stop end
+2016-04-28 14:36:07.339 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-04-28 23:48:21.695 INFO  <main> mkdb.util.Dbx start ...
+2016-04-28 23:48:21.716 INFO  <main> System.load(/tmp/libdb_amd643407219829212005324.so)
+2016-04-28 23:48:31.136 INFO  <main> mkdb.util.Dbx stop begin
+2016-04-28 23:48:31.137 INFO  <main> mkdb.util.Dbx stop end
+2016-04-28 23:48:31.140 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-05-03 21:55:11.736 INFO  <main> mkdb.util.Dbx start ...
+2016-05-03 21:55:11.736 INFO  <main> System.load(C:\Users\Administrator\Desktop\transform_mkdb20160429\transform_mkdb\bin\..\bin\db_amd64.dll)
+2016-05-03 21:55:36.744 INFO  <main> mkdb.util.Dbx stop begin
+2016-05-03 21:55:36.744 INFO  <main> mkdb.util.Dbx stop end
+2016-05-03 21:55:36.744 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-05-03 22:54:56.875 INFO  <main> mkdb.util.Dbx start ...
+2016-05-03 22:54:56.890 INFO  <main> System.load(C:\Users\Administrator\Desktop\transform_mkdb20160429\transform_mkdb\bin\..\bin\db_amd64.dll)
+2016-05-03 22:58:46.624 INFO  <main> mkdb.util.Dbx stop begin
+2016-05-03 22:58:46.624 INFO  <main> mkdb.util.Dbx stop end
+2016-05-03 22:58:46.624 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-05-12 21:09:05.456 INFO  <main> mkdb.util.Dbx start ...
+2016-05-12 21:09:05.472 INFO  <main> System.load(C:\Users\Administrator\Desktop\transform_mkdb20160429\transform_mkdb\bin\..\bin\db_amd64.dll)
+2016-05-12 21:11:43.329 INFO  <main> mkdb.util.Dbx stop begin
+2016-05-12 21:11:43.344 INFO  <main> mkdb.util.Dbx stop end
+2016-05-12 21:11:43.344 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-05-14 12:00:51.509 INFO  <main> mkdb.util.Dbx start ...
+2016-05-14 12:00:51.509 INFO  <main> System.load(C:\Users\Administrator\Desktop\transform_mkdb20160429\transform_mkdb\bin\..\bin\db_amd64.dll)
+2016-05-14 12:04:29.582 INFO  <main> mkdb.util.Dbx stop begin
+2016-05-14 12:04:29.582 INFO  <main> mkdb.util.Dbx stop end
+2016-05-14 12:04:29.613 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-05-16 09:53:43.025 INFO  <main> mkdb.util.Dbx start ...
+2016-05-16 09:53:43.040 INFO  <main> System.load(C:\Users\Administrator\Desktop\transform_mkdb20160429\transform_mkdb\bin\..\bin\db_amd64.dll)
+2016-05-16 09:58:23.607 INFO  <main> mkdb.util.Dbx stop begin
+2016-05-16 09:58:23.607 INFO  <main> mkdb.util.Dbx stop end
+2016-05-16 09:58:23.607 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-05-19 23:09:19.780 INFO  <main> mkdb.util.Dbx start ...
+2016-05-19 23:09:19.820 INFO  <main> System.load(C:\Users\Administrator\Desktop\transform_mkdb20160429\transform_mkdb\bin\..\bin\db_amd64.dll)
+2016-05-19 23:13:27.693 INFO  <main> mkdb.util.Dbx stop begin
+2016-05-19 23:13:27.693 INFO  <main> mkdb.util.Dbx stop end
+2016-05-19 23:13:27.693 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-05-20 22:13:16.718 INFO  <main> mkdb.util.Dbx start ...
+2016-05-20 22:13:16.734 INFO  <main> System.load(C:\Users\Administrator\Desktop\transform_mkdb20160429\transform_mkdb\bin\..\bin\db_amd64.dll)
+2016-05-20 22:16:56.686 INFO  <main> mkdb.util.Dbx stop begin
+2016-05-20 22:16:56.686 INFO  <main> mkdb.util.Dbx stop end
+2016-05-20 22:16:56.702 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-05-23 00:19:00.870 INFO  <main> mkdb.util.Dbx start ...
+2016-05-23 00:19:00.885 INFO  <main> System.load(C:\Users\Administrator\Desktop\transform_mkdb20160429\transform_mkdb\bin\..\bin\db_amd64.dll)
+2016-05-23 00:22:47.460 INFO  <main> mkdb.util.Dbx stop begin
+2016-05-23 00:22:47.460 INFO  <main> mkdb.util.Dbx stop end
+2016-05-23 00:22:47.460 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-06-06 20:59:13.471 INFO  <main> mkdb.util.Dbx start ...
+2016-06-06 20:59:13.518 INFO  <main> System.load(C:\Users\Administrator\Desktop\transform_mkdb20160429\transform_mkdb\bin\..\bin\db_amd64.dll)
+2016-06-06 21:03:46.994 INFO  <main> mkdb.util.Dbx stop begin
+2016-06-06 21:03:46.994 INFO  <main> mkdb.util.Dbx stop end
+2016-06-06 21:03:46.994 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-06-12 02:06:35.299 INFO  <main> mkdb.util.Dbx start ...
+2016-06-12 02:06:35.409 INFO  <main> System.load(C:\Users\Administrator\Desktop\transform_mkdb20160429\transform_mkdb\bin\..\bin\db_amd64.dll)
+2016-06-12 02:10:07.365 INFO  <main> mkdb.util.Dbx stop begin
+2016-06-12 02:10:07.365 INFO  <main> mkdb.util.Dbx stop end
+2016-06-12 02:10:07.365 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-06-12 01:09:16.571 INFO  <main> mkdb.util.Dbx start ...
+2016-06-12 01:09:16.633 INFO  <main> System.load(C:\Users\Administrator\Desktop\transform_mkdb20160429\transform_mkdb\bin\..\bin\db_amd64.dll)
+2016-06-12 01:12:37.234 INFO  <main> mkdb.util.Dbx stop begin
+2016-06-12 01:12:37.234 INFO  <main> mkdb.util.Dbx stop end
+2016-06-12 01:12:37.234 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-06-13 12:45:33.215 INFO  <main> mkdb.util.Dbx start ...
+2016-06-13 12:45:34.085 INFO  <main> System.load(C:\Users\Administrator\Desktop\transform_mkdb20160429\transform_mkdb\bin\..\bin\db_amd64.dll)
+2016-06-13 12:49:16.278 INFO  <main> mkdb.util.Dbx stop begin
+2016-06-13 12:49:16.278 INFO  <main> mkdb.util.Dbx stop end
+2016-06-13 12:49:16.278 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-06-15 02:57:04.314 INFO  <main> mkdb.util.Dbx start ...
+2016-06-15 02:57:04.580 INFO  <main> System.load(C:\Users\Administrator\Desktop\transform_mkdb20160429\transform_mkdb\bin\..\bin\db_amd64.dll)
+2016-06-15 03:03:14.448 INFO  <main> mkdb.util.Dbx stop begin
+2016-06-15 03:03:14.448 INFO  <main> mkdb.util.Dbx stop end
+2016-06-15 03:03:14.448 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-06-20 23:08:51.281 INFO  <main> mkdb.util.Dbx start ...
+2016-06-20 23:08:51.296 INFO  <main> System.load(C:\Users\Administrator\Desktop\transform_mkdb20160429\transform_mkdb\bin\..\bin\db_amd64.dll)
+2016-06-20 23:09:11.732 INFO  <main> mkdb.util.Dbx stop begin
+2016-06-20 23:09:11.732 INFO  <main> mkdb.util.Dbx stop end
+2016-06-20 23:09:11.732 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-06-21 23:23:17.287 INFO  <main> mkdb.util.Dbx start ...
+2016-06-21 23:23:17.302 INFO  <main> System.load(C:\Users\Administrator\Desktop\transform_mkdb20160429\transform_mkdb\bin\..\bin\db_amd64.dll)
+2016-06-21 23:30:37.478 INFO  <main> mkdb.util.Dbx stop begin
+2016-06-21 23:30:37.478 INFO  <main> mkdb.util.Dbx stop end
+2016-06-21 23:30:37.478 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-07-04 23:08:10.798 INFO  <main> mkdb.util.Dbx start ...
+2016-07-04 23:08:10.829 INFO  <main> System.load(C:\Users\Administrator\Desktop\transform_mkdb20160429\transform_mkdb\bin\..\bin\db_amd64.dll)
+2016-07-04 23:17:55.518 INFO  <main> mkdb.util.Dbx stop begin
+2016-07-04 23:17:55.518 INFO  <main> mkdb.util.Dbx stop end
+2016-07-04 23:17:55.518 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-07-18 19:41:09.563 INFO  <main> mkdb.util.Dbx start ...
+2016-07-18 19:41:09.563 INFO  <main> System.load(C:\Users\Administrator\Desktop\transform_mkdb20160429\transform_mkdb\bin\..\bin\db_amd64.dll)
+2016-07-18 19:51:10.445 INFO  <main> mkdb.util.Dbx stop begin
+2016-07-18 19:51:10.445 INFO  <main> mkdb.util.Dbx stop end
+2016-07-18 19:51:10.445 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-07-19 16:10:37.554 INFO  <main> mkdb.util.Dbx start ...
+2016-07-19 16:10:37.586 INFO  <main> System.load(C:\Users\Administrator\Desktop\transform_mkdb20160429\transform_mkdb\bin\..\bin\db_amd64.dll)
+2016-07-19 16:22:04.736 INFO  <main> mkdb.util.Dbx stop begin
+2016-07-19 16:22:04.736 INFO  <main> mkdb.util.Dbx stop end
+2016-07-19 16:22:04.782 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.
+2016-07-22 12:52:45.524 INFO  <main> mkdb.util.Dbx start ...
+2016-07-22 12:52:45.540 INFO  <main> System.load(F:\ºÏ·þ²âÊÔ20160721\xmerge_alltools_20160721\transform_mkdb\bin\..\bin\db_amd64.dll)
+2016-07-22 13:11:02.627 INFO  <main> mkdb.util.Dbx stop begin
+2016-07-22 13:11:02.627 INFO  <main> mkdb.util.Dbx stop end
+2016-07-22 13:11:02.627 FATAL <mkdb.ShutdownHook> mkdb stop from ShutdownHook.

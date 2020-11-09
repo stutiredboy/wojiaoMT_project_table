@@ -1,0 +1,87 @@
+关于Xgen中transforom的使用
+
+Transform实现功能：
+	数据库变更迁移，当数据库的数据结构(.xml)发生改变，自动把旧数据库(src_db)中的数据根据.xml字段的修改迁移成新的数据库(dest_db)
+	工具使用需要的支持：xbean.jar(旧数据库的xbean,xtable的定义类）, .xml(新的数据库定义文件）， src_db（旧数据库）
+	工具使用依赖库	  ：monkeyking.jar , jio.jar , libamd64.so or db_x86.dll
+
+Transform的手动使用流程：
+	1. 使用xgen生成相关的transform代码
+		java -cp xbean.jar -jar monkeyking.jar -transform .xml src_db dest_db		
+			xbean.jar: 上次生成的xbean包，里面有相应的xtable, xbean
+			src_db : 源db库
+			dest_db : 目的db库（注意，执行程序会清空dest_db里的内容）
+				
+	2. 调用生成代码中的Main.class进行数据转换
+		java -cp monkeyking.jar Main Libpath
+			Libpath: 相应的dll or so 库的目录
+			
+	
+自动化脚本：(snail/bin)
+	Linux版本: xtransform.sh 
+		使用： ./xtransform.sh xbean.jar .xml srcdb destdb libpath
+	Ant版本：build-transform.xml 
+		使用： ant -f build-transform.xml -Dxbean.jar=xbean.jar -Dxml=test.xml -Dsrcdb=src_db -Ddestdb=dest_db -Dlibpath=../bin
+
+工具支持的功能：
+	1. 支持xml文件中Xbean中的字段的增加或删除（包括字段顺序的调整）（不支持修改）
+	
+	2. 需要明确的"不支持修改"问题：
+		所谓的"不支持修改"，即不支持XBean的名字及其中字段名字的修改，还有Table的value类型的修改，详细说明可参见3.1, 3.2, 3.3
+		其中XBean中字段名字的修改需要注意的是，有可能出现下面一种情况，这也是不允许的：
+			即：
+				XBean xbean
+				{
+					int aaa;
+					int bbb;
+					int ccc;					
+				};
+				删除：XBean.aaa的字段
+				添加：XBean.aaa的字段
+		所有不支持的修改都会在工具中进行较验，并且会异常退出。
+	
+	3. 尚不支持的功能		
+		3.1 XBean中字段名字的修改(Rename)
+			比如需要把XBean.xxx 改名为 XBean.xxx1，并且保持数据的相同，相当于更改一个文件的文件名。
+			由于工具无法判断出XBean.xxx1到底是新添加的，还是仅仅是XBean.xxx改名过来的，所以这个功能暂时没法支持。
+			如需支持，需要xml文件中明确标出，XBean.xxx -> XBean.xxx1的修改信息，而这就增加了上层修改xml文件的负担。
+			
+			
+		3.2 XBean中字段类型的修改(名字不更改，只改type)
+			比如需要把XBean.xxx(long)类型改为XBean.xxx(String)类型，并且使数据从Long转换String，
+			还可能从Long->XBean类型，String->Long等，这些对程序很难处理。
+			如需支持的话，可能需要增加回调接口来处理。
+			注：现在支持map -> treemap , treemap -> map , vector -> list , list -> vector, set -> list, set -> vector 的类型的更改（由于底层db存储的数据结构一致，只是内存中的存储结构不一样）
+		3.3 Table中value类型的更改
+			旧Table类型 <long, String>至新Table类型<long, XBean>，而String->XBean的转换问题同2.2
+			但，如果只考虑需要保留key的值，value值清0的话，可以考虑支持
+		
+		<!-- 3.4 CBean的支持（key为CBean的支持）-->
+	
+	4. 支持CBean字段的添加（注：不支持删除）--
+	
+		CBean结构中的字段的添加.
+		
+		* 不支持删除
+		原因：
+			CBean作为Key，具有**唯一性**的属性，可以考虑有如下的CBean定义：
+			CBean cbean
+			{
+				int a;
+				String b;				
+			}
+			假设旧数据库存有如下的键值:{1, "1"}, {2, "1"}, {3, "1"} .....
+			这时在新的xml定义中删除a，则CBean的键值则变为：{"1"}, {"1"}, {"1"} .....
+			如此，key的值就变成不唯一。 
+
+FAQ:
+	1. 使用脚本出错？
+		首先，尝试把相应的依赖库monkeyking.jar,jio.jar,lib.so包更新到最新版再试
+		其次，尝试重新生成xbean.jar，monkeyking.jar的更改有可能影响其中的函数调用
+		最后，发邮件或RTX我吧……
+	
+	
+	
+																																																					
+																																																				
+																																																						
