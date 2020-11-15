@@ -1148,8 +1148,8 @@
 		<variable name="hols" type="int" fromCol="宝石可镶嵌个数"/>
 		<variable name="holsLevel" type="vector" value="int" fromCol="槽1开启等级,槽2开启等级,槽3开启等级"/>
 	</bean>
-	
-	<bean name="DSEquipLvGemInfo" from="z装备系统相关配置表/b宝石镶嵌表点卡服" genxml="server" baseclass="SEquipLvGemInfo">
+
+	<bean name="DSEquipLvGemInfo" from="D点卡服表格/b宝石镶嵌表点卡服" genxml="server" baseclass="SEquipLvGemInfo">
 	</bean>
 	
 	<bean name="CTaozhuangEffect" from="z装备系统相关配置表/t套装效果表" genxml="client" gencode="mtlua">
