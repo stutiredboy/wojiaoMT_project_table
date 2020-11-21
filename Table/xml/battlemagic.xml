@@ -253,5 +253,12 @@
 			<variable name="param" fromCol="连击点数参数" type="int"/>
 			<variable name="desc" fromCol="描述" type="String"/>
 		</bean>
+		
+		<bean name="SPKDrop" from="q切磋掉落配置表" genxml="server" >
+			<variable name="id" fromCol="编号" type="int"/>
+			<variable name="dropLevel" fromCol="掉落等级" type="int"/>
+			<variable name="dropGoldCoin" fromCol="掉落金币" type="int"/>
+			<variable name="levelLimit" fromCol="等级限制" type="int"/>
+		</bean>
 </namespace>
 	
