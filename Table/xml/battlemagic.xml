@@ -259,6 +259,7 @@
 			<variable name="dropLevel" fromCol="掉落等级" type="int"/>
 			<variable name="dropGoldCoin" fromCol="掉落金币" type="int"/>
 			<variable name="levelLimit" fromCol="等级限制" type="int"/>
+			<variable name="safeMapid" fromCol="安全地图ID" type="int"/>
 		</bean>
 </namespace>
 	
