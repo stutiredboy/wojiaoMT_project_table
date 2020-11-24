@@ -994,11 +994,17 @@
 			<variable name="id" type="int" fromCol="效果ID" /> id
 			<variable name="shapeid" fromCol="造型id"  type="int"/>
 			<variable name="color" type="string" fromCol="颜色" />
-			<variable name="skills" type="vector" value="int" fromCol="技能1,技能2,技能3,技能4"/>
-			<variable name="skillfactors" type="vector" value="int" fromCol="技能1等级系数,技能2等级系数,技能3等级系数,技能4等级系数"/>
-			<variable name="skillconstants" type="vector" value="int" fromCol="技能1等级常数,技能2等级常数,技能3等级常数,技能4等级常数"/>
+			<variable name="speed_value" type="int" fromCol="速度" /> 
+			<variable name="uplimithp_value" type="int" fromCol="气血上限" />
+			<variable name="curmp_value" type="int" fromCol="魔法值" /> 
+			<variable name="magicdef_value" type="int" fromCol="魔法防御" /> 
+			<variable name="magicattack_value" type="int" fromCol="法术伤害" /> 
+			<variable name="phyattack_value" type="int" fromCol="物理伤害" /> 
+			<variable name="defend_value" type="int" fromCol="物理防御" /> 
+			<variable name="magicdouble_value" type="int" fromCol="法术连击几率" /> 
+			<variable name="phycruellv_value" type="int" fromCol="物理暴击几率" /> 	
+			<variable name="magiccruellv_value" type="int" fromCol="法术暴击几率" />
 		</bean>
-		
 		
 		<bean name="Sanquan" from="a安全锁道具配置表" genxml="server">
 			<variable name="id" type="int" fromCol="ID" /> 
