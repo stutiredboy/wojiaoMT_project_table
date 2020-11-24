@@ -1002,6 +1002,7 @@
 			<variable name="phyattack_value" type="int" fromCol="物理伤害" /> 
 			<variable name="defend_value" type="int" fromCol="物理防御" /> 
 			<variable name="magicdouble_value" type="int" fromCol="法术连击几率" /> 
+			<variable name="medical_value" type="int" fromCol="治疗加成系数" />
 			<variable name="phycruellv_value" type="int" fromCol="物理暴击几率" /> 	
 			<variable name="magiccruellv_value" type="int" fromCol="法术暴击几率" />
 		</bean>
