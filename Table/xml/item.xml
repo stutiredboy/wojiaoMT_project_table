@@ -663,11 +663,10 @@
 			<variable name="needItemId" type="int" fromCol="重铸需要道具" />
 			<variable name="needItemCount" type="int" fromCol="重铸需要道具数量" />
 	 </bean>
-	 			
-
-
-	 <bean name="CEquipItemAttr_PointCard" from="D点卡服表格/DMT3道具表-复合/DMT3装备表" genxml="client" gencode="mtlua"> 		
+	 
+	<bean name="CPetEquipItemAttr" from="c宠物相关/c宠物装备表" genxml="client" gencode="mtlua"> 		
 			<variable name="id" type="int" fromCol="编号"/> id
+			<variable name="eequiptype" type="int" fromCol="部件ID" />
 			<variable name="addhpmax" type="int" fromCol="增加最大生命上限"/>
 			<variable name="addmpmax" type="int" fromCol="增加真气上限"/>
 			<variable name="addwaigongshuanghai" type="int" fromCol="增加外功伤害"/>
@@ -679,10 +678,8 @@
 			<variable name="addspeed" type="int" fromCol="增加速度"/>
 			<variable name="addfengyin" type="int" fromCol="加强封印"/>
 			<variable name="fengyinkangxing" type="int" fromCol="封印抗性"/>
-			<variable name="equipqianzhui" type="int" fromCol="装备前缀"/>
 			<variable name="appendAttrid" type="vector" value="int" fromCol="附加属性1id,附加属性2id,附加属性3id"/>
 			<variable name="appendAttrValue" type="vector" value="int" fromCol="附加属性1值,附加属性2值,附加属性3值"/>
-			<variable name="roleNeed" type="vector" value="int" fromCol="角色需求1,角色需求2" />
 			<variable name="saleratio" type="int" fromCol="出售价格系数"/>
 			<variable name="naijiuratio" type="int" fromCol="耐久度系数"/>
 			<variable name="cuilianlv" type="int" fromCol="淬炼等级"/>
@@ -704,7 +701,6 @@
 			<variable name="hols" type="int" fromCol="宝石槽数量"/>
 			<variable name="vgemboxlevel" type="vector" value="int" fromCol="槽1开启等级,槽2开启等级,槽3开启等级"/>
 			 <variable name="gems" type="vector" value="int" fromCol="宝石1,宝石2,宝石3,宝石4,宝石5,宝石6,宝石7,宝石8,宝石9,宝石10"/>
-			<variable name="needSex" type="int" fromCol="性别需求" /> 
 			<variable name="equipcolor" type="int" fromCol="装备颜色" /> 
 			<variable name="suiting" type="int" fromCol="套装id" /> 
 			<variable name="skillid" type="string" fromCol="特技id" />
@@ -716,15 +712,160 @@
 			<variable name="randomSkillId" type="int" fromCol="特效随机库ID" />
 			<variable name="randomEffectId" type="int" fromCol="特技随机库ID" />
 			<variable name="vgemtype" type="vector" value="int" fromCol="可镶嵌宝石类型1,可镶嵌宝石类型2,可镶嵌宝石类型3,可镶嵌宝石类型4,可镶嵌宝石类型5"/>
-			<variable name="eequiptype" type="int" fromCol="部件ID" />
 			<variable name="treasureScore" type="int" fromCol="珍品评分" />
   
     		<variable name="nautoeffect" type="int" fromCol="是否自动播放特效" />
-		 <variable name="ncanfenjie" type="int" fromCol="是否有分解按钮" />
+			<variable name="ncanfenjie" type="int" fromCol="是否有分解按钮" />
+			
+			<variable name="ncanChongzhu" type="int" fromCol="是否可以重铸" />
+			<variable name="needGoldCoin" type="int" fromCol="重铸需要金币" />
+			<variable name="needItemId" type="int" fromCol="重铸需要道具" />
+			<variable name="needItemCount" type="int" fromCol="重铸需要道具数量" />
 	 </bean>
+	 			
+	<bean name="CPetItemAttr" from="c宠物相关/c宠物装备表" genxml="client" priority="1" gencode="mtlua">
+		<variable name="id" type="int" fromCol="编号" /> id
+		<variable name="itemtypeid" type="int" fromCol="类型" /> 
+		<variable name="name" type="string" fromCol="显示名" /> 
+		<variable name="level" type="int" fromCol="等级" /> 	等级
+		<variable name="icon" type="int" fromCol="造型编号" /> 客户端包裹栏小图标的数字id
+		<variable name="battleuse" type="int" fromCol="战斗内使用对象" />
+		<variable name="battleuser" type="int" fromCol="战斗内使用者对象" />
+		<variable name="outbattleuse" type="int" fromCol="战斗外使用对象"/>
+		<variable name="destribe" type="string" fromCol="描述" />
+		<variable name="usemethod" type="string" fromCol="道具使用方法" /> 			
+		<variable name="maxNum" type="int" fromCol="最大堆叠数量" /> 
+		<variable name="bBind" type="bool" fromCol="是否绑定"/>
+		<variable name="needLevel" type="int" fromCol="需求等级" min="1" max="150"/> 
+		<variable name="bManuleDesrtrol" type="bool" fromCol="可否摧毁" />
+		<variable name="units" type="string" fromCol="单位" /> 
+		<variable name="bCanSale" type="int" fromCol="可否摆摊上架" />
+		<variable name="bCanSaleToNpc" type="int" fromCol="可否卖店" />
+		<variable name="npcid2" type="int" fromCol="售卖NPCID" />
+		<variable name="colour" type="string" fromCol="道具名颜色" />
+		<variable name="effectdes" type="string" fromCol="功能说明" />
+		<variable name="vcomefrom" type="vector" value="int" fromCol="获取途径1,获取途径2,获取途径3,获取途径4,获取途径5,获取途径6,获取途径7,获取途径8,获取途径9" />	
+		<variable name="nusetype" type="int" fromCol="使用按钮功能类型" />
+		<variable name="vuseparam" type="vector" value="int" fromCol="使用按钮功能参数1,使用按钮功能参数2,使用按钮功能参数3" />
+		<variable name="nshoptype" type="int" fromCol="售卖商店类型" />
+		<variable name="nquality" type="int" fromCol="颜色品质" />
+		<variable name="special" type="int" fromCol="寻路特殊处理" />
+	</bean>	
 
+	<bean name="CPetEquipEffect" from="c宠物相关/c宠物装备表" genxml="client" priority="1">		
+		<variable name="id" type="int" fromCol="编号" /> id
+		<variable name="equipcolor" type="int" fromCol="装备颜色" />
+		<variable name="baseEffectType" type="vector" value="int" fromCol="属性名1,属性名2,属性名3,属性名4,属性名5,属性名6" /> 
+		<variable name="baseEffect" type="vector" value="int" fromCol="属性值1,属性值2,属性值3,属性值4,属性值5,属性值6" />
+		<variable name="scorecolor" type="vector" value="int" fromCol="绿色评分,蓝色评分,紫色评分,橙色评分,暗金色评分" />
+		<variable name="bCanSale" type="int" fromCol="可否摆摊上架" />
+		<variable name="sellpricecoef" type="int" fromCol="出售价格系数" /> 出售价格系数
+		<variable name="endurecoef" type="int" fromCol="耐久度系数" />耐久度系数
+		<variable name="suiting" type="int" fromCol="套装id" />
+		<variable name="weaponid" type="int" fromCol="武器造型编号" />
+		<variable name="weaponeffectid" type="int" fromCol="武器特效编号" />
+		<variable name="modelpathleft" type="vector"  value="string" fromCol="左手路径1,左手路径2" />		装备在场景里对应的精灵
+		<variable name="modelpathright" type="vector"  value="string" fromCol="右手路径1,右手路径2" />
+		<variable name="socketleft" type="vector"  value="string" fromCol="左手挂点1,左手挂点2" />			装备如果是左手，左手的挂点名
+		<variable name="socketright" type="vector"  value="string" fromCol="右手挂点1,右手挂点2" />			装备如果是右手，右手的挂点名
+		<variable name="eequiptype" type="int" fromCol="部件ID" />
+	</bean>
 
+	<bean name="SPetEquipItemShuXing" from="c宠物相关/c宠物装备表" genxml="server" baseclass="ItemShuXing">
+		<variable name="maxnaijiu" type="int" fromCol="耐久上限"/>
+		<variable name="ptxlfailrate" type="int" fromCol="装备普通修理失败几率"/>
+		<variable name="ptxlcailiaoid" type="int" fromCol="装备修理材料ID"/>
+		<variable name="ptxlcailiaonum" type="int" fromCol="装备修理材料消耗数量"/>
+		<variable name="commonidlist" type="vector" value="int" fromCol="装备修理材料ID1,装备修理材料ID2,装备修理材料ID3,装备修理材料ID4,装备修理材料ID5,装备修理材料ID6,装备修理材料ID7,装备修理材料ID8,装备修理材料ID9,装备修理材料ID10"/> 普通修理材料id列表
+		<variable name="commonnumlist" type="vector" value="int" fromCol="装备修理材料消耗数量1,装备修理材料消耗数量2,装备修理材料消耗数量3,装备修理材料消耗数量4,装备修理材料消耗数量5,装备修理材料消耗数量6,装备修理材料消耗数量7,装备修理材料消耗数量8,装备修理材料消耗数量9,装备修理材料消耗数量10"/> 普通修理材料数量列表
+		<variable name="tsxlcailiaoid" type="int" fromCol="装备特殊修理材料ID"/>
+		<variable name="tsxlcailiaonum" type="int" fromCol="装备特殊修理材料消耗数量"/>
+		<variable name="ptxlmoneynum" type="int" fromCol="装备普通修理消耗金钱"/>
+		<variable name="ptxlmoneytype" type="int" fromCol="普通修理消耗金钱类型"/>
+		<variable name="tsxlmoneynum" type="int" fromCol="装备特殊修理消耗金钱"/>
+		<variable name="tsxlmoneytype" type="int" fromCol="特殊修理消耗金钱类型"/>
+		<variable name="canGems" type="vector" value="int" fromCol="可镶嵌宝石类型1,可镶嵌宝石类型2,可镶嵌宝石类型3,可镶嵌宝石类型4,可镶嵌宝石类型5"/>
+		<variable name="gems" type="vector" value="int" fromCol="宝石1,宝石2,宝石3,宝石4,宝石5,宝石6,宝石7,宝石8,宝石9,宝石10"/>
+		<variable name="equipcolor" type="int" fromCol="装备颜色" />
+		<variable name="suiting" type="int" fromCol="套装id" />
+		<variable name="skillid" type="string" fromCol="特技id" />
+		<variable name="effectid" type="string" fromCol="特效id" />            
+		<variable name="specialAttr" type="int" fromCol="是否生成特殊属性" />
+		<variable name="baseAttrId" type="int" fromCol="装备基础属性ID" />
+		<variable name="addAttrRate" type="int" fromCol="附加属性出现几率" />
+		<variable name="addAttrInfo" type="vector" value="string" fromCol="附加属性双加随机库ID,附加属性单加随机库ID,附加属性加减随机库ID" />
+		<variable name="randomAttrId" type="string" fromCol="附加属性随机库ID" />
+		<variable name="randomSkillId" type="int" fromCol="特技随机库ID" />
+		<variable name="randomEffectId" type="int" fromCol="特效随机库ID" />
+		<variable name="是否自动分解" type="int" fromCol="是否自动分解" />
+		<variable name="分解获得银币" type="int" fromCol="分解获得银币" />
+		<variable name="分解额外获得物品1" type="string" fromCol="分解额外获得物品1" />
+		<variable name="分解额外获得物品2" type="string" fromCol="分解额外获得物品2" />
+		<variable name="分解额外获得物品3" type="string" fromCol="分解额外获得物品3" />
+		<variable name="分解额外获得物品4" type="string" fromCol="分解额外获得物品4" />
+		<variable name="分解额外获得物品5" type="string" fromCol="分解额外获得物品5" />
+		<variable name="treasureScore" type="int" fromCol="珍品评分" />   
 
+		<variable name="ncanChongzhu" type="int" fromCol="是否可以重铸" />
+		<variable name="needGoldCoin" type="int" fromCol="重铸需要金币" />
+		<variable name="needItemId" type="int" fromCol="重铸需要道具" />
+		<variable name="needItemCount" type="int" fromCol="重铸需要道具数量" />			
+	</bean>
+
+	<bean name="CEquipItemAttr_PointCard" from="D点卡服表格/DMT3道具表-复合/DMT3装备表" genxml="client" gencode="mtlua"> 		
+		<variable name="id" type="int" fromCol="编号"/> id
+		<variable name="addhpmax" type="int" fromCol="增加最大生命上限"/>
+		<variable name="addmpmax" type="int" fromCol="增加真气上限"/>
+		<variable name="addwaigongshuanghai" type="int" fromCol="增加外功伤害"/>
+		<variable name="addniegongshanghai" type="int" fromCol="增加内功伤害"/>
+		<variable name="addniegongdefence" type="int" fromCol="增加内功防御"/>
+		<variable name="addwaigongdefence" type="int" fromCol="增加外功防御"/>
+		<variable name="addmingzhong" type="int" fromCol="增加命中"/>
+		<variable name="addduoshan" type="int" fromCol="增加躲闪"/>
+		<variable name="addspeed" type="int" fromCol="增加速度"/>
+		<variable name="addfengyin" type="int" fromCol="加强封印"/>
+		<variable name="fengyinkangxing" type="int" fromCol="封印抗性"/>
+		<variable name="equipqianzhui" type="int" fromCol="装备前缀"/>
+		<variable name="appendAttrid" type="vector" value="int" fromCol="附加属性1id,附加属性2id,附加属性3id"/>
+		<variable name="appendAttrValue" type="vector" value="int" fromCol="附加属性1值,附加属性2值,附加属性3值"/>
+		<variable name="saleratio" type="int" fromCol="出售价格系数"/>
+		<variable name="naijiuratio" type="int" fromCol="耐久度系数"/>
+		<variable name="cuilianlv" type="int" fromCol="淬炼等级"/>
+		<variable name="naijiumax" type="int" fromCol="耐久上限"/>
+		 <variable name="ptxlfailrate" type="int" fromCol="装备普通修理失败几率"/>
+		 <variable name="ptxlcailiaoid" type="int" fromCol="装备修理材料ID"/>
+		<variable name="ptxlcailiaonum" type="int" fromCol="装备修理材料消耗数量"/>
+
+		 <variable name="commonidlist" type="vector" value="int" fromCol="装备修理材料ID1,装备修理材料ID2,装备修理材料ID3,装备修理材料ID4,装备修理材料ID5,装备修理材料ID6,装备修理材料ID7,装备修理材料ID8,装备修理材料ID9,装备修理材料ID10"/> 普通修理材料id列表
+		<variable name="commonnumlist" type="vector" value="int" fromCol="装备修理材料消耗数量1,装备修理材料消耗数量2,装备修理材料消耗数量3,装备修理材料消耗数量4,装备修理材料消耗数量5,装备修理材料消耗数量6,装备修理材料消耗数量7,装备修理材料消耗数量8,装备修理材料消耗数量9,装备修理材料消耗数量10"/> 普通修理材料数量列表
+
+		 <variable name="tsxlcailiaoid" type="int" fromCol="装备特殊修理材料ID"/>
+		 <variable name="tsxlcailiaonum" type="int" fromCol="装备特殊修理材料消耗数量"/>
+		  <variable name="ptxlmoneynum" type="int" fromCol="装备普通修理消耗金钱"/>
+		  <variable name="ptxlmoneytype" type="int" fromCol="普通修理消耗金钱类型"/>
+		 <variable name="tsxlmoneynum" type="int" fromCol="装备特殊修理消耗金钱"/>
+		 <variable name="tsxlmoneytype" type="int" fromCol="特殊修理消耗金钱类型"/>
+		 <variable name="gemsLevel" type="int" fromCol="可镶嵌最高等级宝石"/>
+		<variable name="hols" type="int" fromCol="宝石槽数量"/>
+		<variable name="vgemboxlevel" type="vector" value="int" fromCol="槽1开启等级,槽2开启等级,槽3开启等级"/>
+		 <variable name="gems" type="vector" value="int" fromCol="宝石1,宝石2,宝石3,宝石4,宝石5,宝石6,宝石7,宝石8,宝石9,宝石10"/>
+		<variable name="equipcolor" type="int" fromCol="装备颜色" /> 
+		<variable name="suiting" type="int" fromCol="套装id" /> 
+		<variable name="skillid" type="string" fromCol="特技id" />
+		<variable name="effectid" type="string" fromCol="特效id" />
+		<variable name="jianding" type="int" fromCol="是否已鉴定" />
+		<variable name="specialAttr" type="int" fromCol="是否生成特殊属性" />
+		<variable name="baseAttrId" type="int" fromCol="装备基础属性ID" />
+		<variable name="randomAttrId" type="string" fromCol="附加属性随机库ID" />
+		<variable name="randomSkillId" type="int" fromCol="特效随机库ID" />
+		<variable name="randomEffectId" type="int" fromCol="特技随机库ID" />
+		<variable name="vgemtype" type="vector" value="int" fromCol="可镶嵌宝石类型1,可镶嵌宝石类型2,可镶嵌宝石类型3,可镶嵌宝石类型4,可镶嵌宝石类型5"/>
+		<variable name="eequiptype" type="int" fromCol="部件ID" />
+		<variable name="treasureScore" type="int" fromCol="珍品评分" />
+
+		<variable name="nautoeffect" type="int" fromCol="是否自动播放特效" />
+		<variable name="ncanfenjie" type="int" fromCol="是否有分解按钮" />
+	</bean>
 
 	<bean name="CPointCardEquipGem" from="D点卡服表格/b宝石镶嵌表点卡服" genxml="client" gencode="mtlua"> 	
 		 <variable name="id" type="int" fromCol="装备等级"/> id
