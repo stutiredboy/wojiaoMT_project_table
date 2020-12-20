@@ -99,7 +99,7 @@
 		<variable name="dstPos" type="int" validator="value=[0,)" />
 	</protocol>
 	
-	<protocol name="CTakeOffEquip" type="1014" maxsize="128"  prior="101" tolua="3">
+	<protocol name="CTakeOffEquip" type="1014" maxsize="128"  prior="101" tolua="3"> 装备穿戴
 		<variable name="equipkey" type="int" validator="value=[1,)" />
 		<variable name="posinpack" type="int" validator="value=[-1,)" />
 	</protocol>
