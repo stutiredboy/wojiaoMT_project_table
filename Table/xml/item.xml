@@ -58,7 +58,7 @@
 		</bean>
 	
 		
-		<bean name="CItemAttr" from="d道具表/d道具表-复合/b宝石表,d道具表/d道具表-复合/r任务物品表,d道具表/d道具表-复合/s食品表,d道具表/d道具表-复合/z杂货表,d道具表/d道具表-复合/z装备表,d道具表/d道具表-复合/c宠物物品表" genxml="client" priority="1" gencode="mtlua">
+		<bean name="CItemAttr" from="d道具表/d道具表-复合/b宝石表,d道具表/d道具表-复合/r任务物品表,d道具表/d道具表-复合/s食品表,d道具表/d道具表-复合/z杂货表,d道具表/d道具表-复合/z装备表,c宠物相关/c宠物装备表,d道具表/d道具表-复合/c宠物物品表" genxml="client" priority="1" gencode="mtlua">
 			<variable name="id" type="int" fromCol="编号" /> id
 			<variable name="itemtypeid" type="int" fromCol="类型" /> 
 			<variable name="name" type="string" fromCol="显示名" /> 
@@ -484,7 +484,7 @@
 		</bean>
 		
 		
-		<bean name="CEquipEffect" from="d道具表/d道具表-复合/z装备表" genxml="client" priority="1">		
+		<bean name="CEquipEffect" from="d道具表/d道具表-复合/z装备表,c宠物相关/c宠物装备表" genxml="client" priority="1">		
 			<variable name="id" type="int" fromCol="编号" /> id
 			<variable name="equipcolor" type="int" fromCol="装备颜色" />
 			<variable name="baseEffectType" type="vector" value="int" fromCol="属性名1,属性名2,属性名3,属性名4,属性名5,属性名6" /> 
@@ -700,7 +700,7 @@
 		<bean name="DEquipItemShuXing" from="D点卡服表格/DMT3道具表-复合/DMT3装备表" genxml="server" baseclass="EquipItemShuXing">
 		</bean>
 	
-	<bean name="CEquipItemAttr" from="d道具表/d道具表-复合/z装备表" genxml="client" gencode="mtlua"> 		
+	<bean name="CEquipItemAttr" from="d道具表/d道具表-复合/z装备表,c宠物相关/c宠物装备表" genxml="client" gencode="mtlua"> 		
 			<variable name="id" type="int" fromCol="编号"/> id
 			<variable name="addhpmax" type="int" fromCol="增加最大生命上限"/>
 			<variable name="addmpmax" type="int" fromCol="增加真气上限"/>
