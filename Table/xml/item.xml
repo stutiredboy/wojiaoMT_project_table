@@ -23,6 +23,16 @@
 			  <variable name="classname" fromCol="类名"  type="string" />
 		</bean>
         
+		<bean name="SReincarnateItem" from="d道具表/z转生道具配置表" genxml="server">
+          <variable name="id" type="int" fromCol="道具ID" />
+		  <variable name="tolevel" type="int" fromCol="降到多少级" />
+          <variable name="cons" type="int" fromCol="体质" />
+          <variable name="iq" type="int" fromCol="魔力" />
+          <variable name="str" type="int" fromCol="力量" />
+          <variable name="endu" type="int" fromCol="耐力" />
+          <variable name="agi" type="int" fromCol="敏捷" />
+        </bean>
+            
             
 		<bean name="ItemShuXing" from="d道具表/d道具表-复合/f飞镖表" genxml="server">
 			<variable name="id" type="int" fromCol="编号" /> id
@@ -1169,7 +1179,7 @@
 			<variable name="medical_value" type="int" fromCol="治疗加成系数" />
 			<variable name="phycruellv_value" type="int" fromCol="物理暴击几率" /> 	
 			<variable name="magiccruellv_value" type="int" fromCol="法术暴击几率" />
-			<variable name="buffid" type="int" fromCol="BUFFID" />
+			
 		</bean>
 		
 		<bean name="Sanquan" from="a安全锁道具配置表" genxml="server">
