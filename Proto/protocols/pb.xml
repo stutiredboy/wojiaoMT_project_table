@@ -451,6 +451,7 @@
 		<variable name="marketfreezeexpire" type="long" /> 摆摊冻结截止时间,默认0不冻结
 		<enum name="FLAG_LOCK" value= "1"/>
 		<enum name="FLAG_BIND" value= "2"/>
+		<variable name="huanhuaID" type="int" /> 幻化ID
 	</bean>
 	
 	
