@@ -233,4 +233,14 @@
 			<variable name="spdinc" type="int" fromCol="速度资质提升"/>
 			<variable name="inclv" type="int" fromCol="提升等级"/>
 		</bean>
+		<bean name="CHuanhuaTbl" from="c宠物相关/c宠物灵兽提升" genxml="client" gencode="mtlua">
+			<variable name="id" type="int" fromCol="编号"/>
+			<variable name="freeCurrency" type="int" fromCol="花费货币"/>
+			<variable name="freeItem" type="int" fromCol="花费道具"/>
+		</bean>
+		<bean name="SHuanhuaTbl" from="c宠物相关/c宠物幻化花费表" genxml="server">
+			<variable name="id" type="int" fromCol="编号"/>
+			<variable name="freeCurrency" type="string" fromCol="花费货币"/>
+			<variable name="freeItem" type="string" fromCol="花费道具"/>
+		</bean>
 	</namespace>
