@@ -63,8 +63,8 @@
 		</bean>
 		
 		<bean name="BindTelAwardData">
-			<variable name="item1id" type="string" fromCol="角色1道具ID,角色2道具ID,角色3道具ID,角色4道具ID,角色5道具ID,角色6道具ID" />
-			<variable name="item1num" type="int" fromCol="角色1道具数量,角色2道具数量,角色3道具数量,角色4道具数量,角色5道具数量,角色6道具数量" />
+			<variable name="item1id" type="string" fromCol="角色1道具ID,角色2道具ID,角色3道具ID,角色4道具ID,角色5道具ID,角色6道具ID,角色7道具ID,角色8道具ID,角色9道具ID,角色10道具ID,角色11道具ID,角色12道具ID,角色13道具ID,角色14道具ID,角色15道具ID,角色16道具ID,角色17道具ID,角色18道具ID" />
+			<variable name="item1num" type="int" fromCol="角色1道具数量,角色2道具数量,角色3道具数量,角色4道具数量,角色5道具数量,角色6道具数量,角色7道具数量,角色8道具数量,角色9道具数量,角色10道具数量,角色11道具数量,角色12道具数量,角色13道具数量,角色14道具数量,角色15道具数量,角色16道具数量,角色17道具数量,角色18道具数量" />
 		</bean>
 
 		<bean name="SBindTelAward" from="f福利奖励/手机绑定礼包" genxml="server">
@@ -79,8 +79,8 @@
 		
 		<bean name="CBindTelAward" from="f福利奖励/手机绑定礼包" genxml="client" gencode="mtlua">
 			<variable name="id" type="int" fromCol="ID"/>
-			<variable name="itemid" type="vector" value="int" fromCol="角色1道具ID,角色2道具ID,角色3道具ID,角色4道具ID,角色5道具ID,角色6道具ID" />
-			<variable name="itemnum" type="vector" value="int" fromCol="角色1道具数量,角色2道具数量,角色3道具数量,角色4道具数量,角色5道具数量,角色6道具数量" />
+			<variable name="itemid" type="vector" value="int" fromCol="角色1道具ID,角色2道具ID,角色3道具ID,角色4道具ID,角色5道具ID,角色6道具ID,角色7道具ID,角色8道具ID,角色9道具ID,角色10道具ID,角色11道具ID,角色12道具ID,角色13道具ID,角色14道具ID,角色15道具ID,角色16道具ID,角色17道具ID,角色18道具ID" />
+			<variable name="itemnum" type="vector" value="int" fromCol="角色1道具数量,角色2道具数量,角色3道具数量,角色4道具数量,角色5道具数量,角色6道具数量,角色7道具数量,角色8道具数量,角色9道具数量,角色10道具数量,角色11道具数量,角色12道具数量,角色13道具数量,角色14道具数量,角色15道具数量,角色16道具数量,角色17道具数量,角色18道具数量" />
 		</bean>
 		
 		<bean name="CPointCardBindTelAward" from="D点卡服表格/DMT3手机绑定礼包" genxml="client" gencode="mtlua">

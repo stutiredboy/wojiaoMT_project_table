@@ -235,12 +235,16 @@
 		</bean>
 		<bean name="CHuanhuaTbl" from="c宠物相关/c宠物幻化花费表" genxml="client" gencode="mtlua">
 			<variable name="id" type="int" fromCol="编号"/>
-			<variable name="freeCurrency" type="string" fromCol="花费货币"/>
-			<variable name="freeItem" type="string" fromCol="花费道具"/>
+			<variable name="freeCurrencyType" type="int" fromCol="货币类型"/>
+			<variable name="freeCurrencyCount" type="int" fromCol="货币数量"/>
+			<variable name="freeItemType" type="int" fromCol="碎片类型"/>
+			<variable name="freeItemCount" type="int" fromCol="碎片数量"/>
 		</bean>
 		<bean name="SHuanhuaTbl" from="c宠物相关/c宠物幻化花费表" genxml="server">
 			<variable name="id" type="int" fromCol="编号"/>
-			<variable name="freeCurrency" type="string" fromCol="花费货币"/>
-			<variable name="freeItem" type="string" fromCol="花费道具"/>
+			<variable name="freeCurrencyType" type="int" fromCol="货币类型"/>
+			<variable name="freeCurrencyCount" type="int" fromCol="货币数量"/>
+			<variable name="freeItemType" type="int" fromCol="碎片类型"/>
+			<variable name="freeItemCount" type="int" fromCol="碎片数量"/>
 		</bean>
 	</namespace>
