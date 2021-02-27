@@ -922,7 +922,6 @@
 			<variable name="needSmeltLevel" type="int" fromCol="需求炼金等级"/>
 			<variable name="specialType" type="int" fromCol="临时类型"/>
 			<variable name="treasure" type="int" fromCol="是否珍品" />
-			<variable name="clearType" type="int" fromCol="清理类型" />
 		</bean>	
 		
 		<bean name="DGroceryItemShuXing" from="D点卡服表格/DMT3道具表-复合/DMT3杂货表" genxml="server" baseclass="GroceryItemShuXing">
@@ -1378,6 +1377,5 @@
 	
 	<bean name="SClearTypeConfig" from="d道具表/道具销毁限制表" genxml="server">
 		<variable name="id" type="int" fromCol="id" />
-		<variable name="clearType" type="int" fromCol="清理方式"/>
 	</bean>
 </namespace>
